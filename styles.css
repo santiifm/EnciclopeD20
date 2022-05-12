@@ -52,6 +52,9 @@ button,
   padding-top: 25px;
   padding-bottom: 25px;
 }
+.dropdown-item{
+  font-size: 20px; 
+}
 .site-header {
   padding-top: 150px;
   padding-bottom: 150px;
