@@ -61,6 +61,11 @@ button,
   background: url('./img/bg-highlight.png') no-repeat;
   background-size: contain;
 }
+.form-control{
+  font-size: 25px;
+}
+.boton-email{
+}
 .section-feature {
   padding-top: 50px;
   padding-bottom: 250px;
