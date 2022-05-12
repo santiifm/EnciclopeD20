@@ -3,14 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
-ç
 @font-face {
-  font-family: "Tell us, Pangaia";
-  src: url('/font/tell-us-pangaia.ttf');
+  font-family: "Morris Roman";
+  src: url('font/morris.ttf');
 }
 
 body {
-  font-family: "Tell us, Pangaia";
+  font-family: "Morris Roman";
   color: #FFFFFF;
   background: url('./img/bg-dark.png') no-repeat center fixed;
   background-size: cover;
@@ -22,42 +21,94 @@ h3,
 h4,
 button,
 .btn {
-  font-family: "Tell us, Pangaia";
-  font-weight: Regular;
+  font-family: "Morris Roman";
   color: #FFFFFF;
   text-shadow: 2px 2px #000000;
 }
 h1{
- font-size: 65px;
+  font-size: 65px;
+  font-style: oblique;
 }
 h2{
- font-size: 60px;
+  font-size: 55px;
+  font-style: oblique;
 }
 h3{
- font-size: 55px;
+  font-size: 45px;
+  font-style: oblique;
 }
 h4{
- font-size: 50px;
+  font-size: 35px;
 }
 p{
- font-size: 30px;
- text-shadow: 2px 2px #000000;
+  font-size: 30px;
+  text-shadow: 2px 2px #000000;
 }
 button,
 .btn {
- font-size: 25px;
+  font-size: 25px;
 }
-
+.navbar{
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
 .site-header {
-  padding-top: 50px;
+  padding-top: 150px;
   padding-bottom: 150px;
   background: url('./img/bg-highlight.png') no-repeat;
   background-size: contain;
 }
 .section-feature {
   padding-top: 50px;
-  padding-bottom: 150px;
+  padding-bottom: 250px;
   background: url('./img/bg-highlight.png') no-repeat;
+  background-position: center calc(100% - 100px);
   background-size: contain;
 }
-
+.pairs-crypto{
+    flex: 1 0 30%;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 6px 8px;
+    font-family: monospace;
+}
+.pairs-crypto dt{
+    display: inline-block;
+    margin: 0;
+    padding: .2em;
+}
+.pairs-crypto dd{
+    display: inline-block;
+    margin: 0;
+    padding: .2em;
+    min-width: 3em;
+    text-align: center;
+    vertical-align: top;
+    -webkit-user-select: none!important;
+    -moz-user-select: none!important;
+    -ms-user-select: none!important;
+    user-select: none!important;
+}
+.boton-redes{
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+}
+.boton-facebook{
+  background: url(./img/icon-facebook.png) no-repeat center;
+  background-size: contain;
+}
+.boton-instagram{
+  background: url(./img/icon-instagram.png) no-repeat center;
+  background-size: contain;
+}
+.boton-youtube{
+  background: url(./img/icon-youtube.png) no-repeat center;
+  background-size: contain;
+}
+.site-footer{
+  padding-top: 50px;
+  padding-bottom: 100px;
+  background: url(./img/bg-footer.png) no-repeat center;
+  background-size: cover;
+}
