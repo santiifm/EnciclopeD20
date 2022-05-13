@@ -67,6 +67,7 @@ button,
   font-size: 25px;
 }
 .boton-email{
+  background-color: #9e1200;
 }
 .section-feature {
   padding-top: 50px;
@@ -125,4 +126,11 @@ button,
 }
 .col-footer{
   padding-bottom: 35px;
+}
+.site-login{
+  padding-top: 450px;
+  padding-bottom: 450px;
+  background: url('./img/bg-highlight.png') no-repeat;
+  background-position: center calc(100% - 10px);
+  background-size: cover;
 }
