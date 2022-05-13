@@ -25,7 +25,7 @@ if (isset($_POST['login'])) {
 		$_SESSION['usuario'] = $usuario;
 		header("location:index.php");
 	}else{
-		include("login.php");
+		include("login.html");
 		?>
 		<h4>El Nombre de Usuario o la Contraseña no Fueron Ingresados Correctamente</h4>
 		<?php
@@ -54,7 +54,7 @@ if (isset($_POST['registro'])) {
 		$_SESSION['usuario'] = $usuario;
 		header('location: index.php');
 	}else{
-		include("registro.php");
+		include("registro.html");
 		?>
 		<h4>Se requiere rellenar todos los campos correctamente</h4>
 		<?php
