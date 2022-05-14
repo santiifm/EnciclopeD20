@@ -55,6 +55,10 @@
 			  </a>
 			  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 				<a class="dropdown-item" href="login.html">Iniciar Sesión / Registrarse</a>
+				<?php
+				if (isset($_SESSION['usuario'])){
+				echo '<a class="dropdown-item" href = "crear.html" style="color: #e41900">Creá tu Personaje</a>';}
+				?>
 				<a class="dropdown-item" href="#">¿Quienes Somos?</a>
 				<a class="dropdown-item" href="#">Ayuda/FAQ</a>
 			  </div>
@@ -70,17 +74,17 @@
 
         <div class="col-md-6 col-sm-12 pe-md-5 col-content my-auto">
 
-          <h1 style="color: #e41900">
-            Bienvenido a la primera enciclopedia de personajes de rol en español.
-          </h1>
-          <h4>
-            El lugar perfecto para guardar y mantener cuenta de tus personajes de rol creados.
-			Crea tu perfil ahora y empieza a compartir tus creaciones!
-          </h4>
-		  <form>
-			<input class="form-control border-0" type="email" placeholder="Ingrese su mail...">
-			<a href="./login.html" class="btn boton-email my-2">Entrar a la Cripta</a>
-		  </form>
+			<h1 style="color: #e41900">
+				Bienvenido a la primera enciclopedia de personajes de rol en español.
+			</h1>
+			<h4>
+				El lugar perfecto para guardar y mantener cuenta de tus personajes de rol creados.
+				Crea tu perfil ahora y empieza a compartir tus creaciones!
+			</h4>
+			<?php 	if (isset($_SESSION['usuario'])){
+						echo '<a href = "/crear.html" class="btn boton-email my-2">Crear un Personaje</a>';
+					}else echo'<a href="./registro.html" class="btn boton-email my-2">Entrar a la Cripta</a>';
+			?>
         </div>
         <div class="col-md-6 col-sm-12 col-image">
           <img src="./img/illust-1.png" alt="" class="img-fluid" />

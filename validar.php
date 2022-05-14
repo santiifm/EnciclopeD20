@@ -7,8 +7,6 @@ $errores = array();
 $_SESSION['usuario']="";
 
 
-$db=mysqli_connect("localhost","root","Maristarugby","login");
-
 if (isset($_POST['login'])) {
 	
 	$usuario = mysqli_real_escape_string($db, $_POST['usuario']);
@@ -60,7 +58,6 @@ if (isset($_POST['registro'])) {
 		<?php
 	}
 }
-mysqli_close($conexion);
 
 
 

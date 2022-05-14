@@ -134,3 +134,10 @@ button,
   background-position: center calc(100% - 10px);
   background-size: cover;
 }
+.lista-pasos-item{
+  font-size: 25px;
+}
+.boton-subir{
+  font-size: 25px;
+  color: #000000;
+}

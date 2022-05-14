@@ -1,6 +1,6 @@
 <?php
 
-$conexion=mysqli_connect("localhost","root","Maristarugby","login");
+$db=mysqli_connect("localhost","root","milueselmejorperro","encicloped20");
 
 
 ?>
