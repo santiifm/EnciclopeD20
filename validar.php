@@ -46,7 +46,7 @@ if (isset($_POST['registro'])) {
 	if (count($errores) == 0) {
 		$contraseña = md5($contraseña_1);
 		
-		$query="INSERT INTO usuarios (usuario, contraseña) VALUES('$usuario', '$contraseña')";
+		$query = "INSERT INTO usuarios (usuario, contraseña) VALUES('$usuario', '$contraseña')";
 		mysqli_query($db, $query);
 
 		$_SESSION['usuario'] = $usuario;

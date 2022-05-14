@@ -1,4 +1,11 @@
-<?php session_start();?>
+<?php
+ 
+session_start();
+  
+if ($_SESSION['usuario']=="") {
+    unset($_SESSION['usuario']);
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
   <head>
