@@ -12,23 +12,27 @@ if (isset($_POST['login'])) {
 	$usuario = mysqli_real_escape_string($db, $_POST['usuario']);
     $contraseña = mysqli_real_escape_string($db, $_POST['contraseña']);
 	
-	$contraseña = md5($contraseña);
+	if (empty($usuario)) { $_SESSION['Error'] = "Se Requiere un Nombre de Usuario"; }
+    if (empty($contraseña)) { $_SESSION['Error'] = "Se Requiere una Contraseña"; }
 	
-	$query="SELECT*FROM usuarios where usuario = '$usuario' and contraseña = '$contraseña'";
-	$resultado=mysqli_query($db,$query);
+	if (!isset($_SESSION['Error'])) {
+		$contraseña = md5($contraseña);
+		
+		$query="SELECT*FROM usuarios where usuario = '$usuario' and contraseña = '$contraseña'";
+		$resultado=mysqli_query($db,$query);
 
-	$filas=mysqli_num_rows($resultado);
-
-	if($filas){
-		$_SESSION['usuario'] = $usuario;
-		header("location:index.php");
+		$filas=mysqli_num_rows($resultado);
+		if (empty($filas)) { $_SESSION['Error'] = "El usuario y la contraseña no coinciden."; }
+		
+		if($filas){
+			$_SESSION['usuario'] = $usuario;
+			header("location:index.php");
+		}else{
+			include("login.php");
+		}
 	}else{
-		include("login.html");
-		?>
-		<h4>El Nombre de Usuario o la Contraseña no Fueron Ingresados Correctamente</h4>
-		<?php
+		include("login.php");
 	}
-	mysqli_free_result($resultado);
 }
 if (isset($_POST['registro'])) {
 	
@@ -36,14 +40,11 @@ if (isset($_POST['registro'])) {
     $contraseña_1 = mysqli_real_escape_string($db, $_POST['contraseña_1']);
     $contraseña_2 = mysqli_real_escape_string($db, $_POST['contraseña_2']);
 	
-	if (empty($usuario)) { array_push($errores, "Se Requiere un Nombre de Usuario"); }
-    if (empty($contraseña_1)) { array_push($errores, "Se Requiere una COntraseña"); }
-  
-    if ($contraseña_1 != $contraseña_2) {
-        array_push($errores, "Las Contraseñas no Coinciden");
-    }
+	if ($contraseña_1 != $contraseña_2) {$_SESSION['Error'] = "Las Contraseñas no Coinciden";}
+	if (empty($usuario)) { $_SESSION['Error'] = "Se Requiere un Nombre de Usuario"; }
+    if (empty($contraseña_1)) { $_SESSION['Error'] = "Se Requiere una Contraseña"; }
 	
-	if (count($errores) == 0) {
+	if (!isset($_SESSION['Error'])) {
 		$contraseña = md5($contraseña_1);
 		
 		$query = "INSERT INTO usuarios (usuario, contraseña) VALUES('$usuario', '$contraseña')";
@@ -52,12 +53,24 @@ if (isset($_POST['registro'])) {
 		$_SESSION['usuario'] = $usuario;
 		header('location: index.php');
 	}else{
-		include("registro.html");
-		?>
-		<h4>Se requiere rellenar todos los campos correctamente</h4>
-		<?php
+		include("registro.php");
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

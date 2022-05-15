@@ -1,6 +1,6 @@
 <?php
-@session_start();
-?>
+include("db.php");
+@session_start();?>
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -10,7 +10,7 @@
 	<!--Icono de Cabecera-->
 	<link rel="icon" href="./favicon.ico">
 
-    <title>Bienvenido a ED20!</title>
+    <title>Creá tu Personaje!</title>
 	
 	<!--Bootstrap-->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -22,10 +22,8 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="./styles.css">
   </head>
-  
   <body>
-	<!--NavBar-->
-	
+
 	<nav class="navbar navbar-expand-lg navbar-gradiente static-top shadow-sm">
 		<div class="col-lg mx-auto">
 			<a href="index.php">
@@ -63,66 +61,43 @@
 			?>
 		</div>
 	</nav>
-	<!--Header-->
 	
-	<header>
-	  <section class="site-header">
-	  <div class="container-sm">
-      <div class="row justify-content-around">
-
-        <div class="col-md-6 col-sm-12 pe-md-5 col-content my-auto">
-
-			<h1 style="color: #e41900">
-				Bienvenido a la primera enciclopedia de personajes de rol en español.
-			</h1>
-			<h4>
-				El lugar perfecto para guardar y mantener cuenta de tus personajes de rol creados.
-				Crea tu perfil ahora y empieza a compartir tus creaciones!
-			</h4>
-			<?php 	if (isset($_SESSION['usuario'])){
-						echo '<a href = "/crear.php" class="btn boton-email my-2">Crear un Personaje</a>';
-					}else echo'<a href="./registro.php" class="btn boton-email my-2">Entrar a la Cripta</a>';
-			?>
-        </div>
-        <div class="col-md-6 col-sm-12 col-image">
-          <img src="./img/illust-1.png" alt="" class="img-fluid mx-5" />
-        </div>
-      </div>
-
-    </header>
-	<!--Main-->
-	<section class="section-feature">
-        <div class="container-sm">
-
-          <div class="row justify-content-between">
-
-			<div class="col-md-6 col-sm-12 col-image">
-				<img src="./img/illust-2.png" alt="" class="img-fluid">
+	<div class="container-fluid shadow-lg" style="max-width: 1600px">
+		<div class="row">
+			<div class="col-md-6 col-sm-12">
+				<p style="color: #e41900"><?php
+					if( isset($_SESSION['Error']) ){
+						echo $_SESSION['Error'];
+						unset($_SESSION['Error']);}
+					?>
+				</p>
+				<ul class="list-group">
+				  <li class="list-group-item lista-pasos-item">Paso 1 - Completá el siguiente pdf editable haciendo click en cada uno de los campos vacíos.</li>
+				  <li class="list-group-item lista-pasos-item">Paso 2 - Apretá la flechita para descargar, ubicada arriba a la derecha, y guardá el pdf con tus cambios.</li>
+				  <li class="list-group-item lista-pasos-item">Paso 3 - Introducí el nombre, una foto y el pdf terminado de tu personaje en el formulario.</li>
+				</ul>
+				<form action="subir.php" method="post" enctype="multipart/form-data">
+					<div class="mb-3">
+					  <textarea class="form-control" id="nombre_personaje" name="nombre" rows="1" required></textarea>
+					  <label style="padding-top: 10px">Subir PDF</label>
+					  <input type="file"  name="pdf" class="form-control form-control-lg" id="formFile" style="font-size: 25px" required>
+					  <label style="padding-top: 10px">Subir Foto</label>
+					  <input type="file"  name="img" class="form-control form-control-lg" id="formFile" style="font-size: 25px" required>
+					  <input type="submit" name="submit" class="btn boton-email my-3" value="Subir Archivos">
+					</div>
+				</form>
 			</div>
-            <div class="col-md-6 col-sm-12 col-content my-auto">
-
-              <h2 style="color: #e41900">
-                No pierdas mas tiempo... o morirás.
-              </h2>
-
-              <p>
-                Apúrate a inspirar a cientos de otros usuarios con tus proyectos de rol. 
-				Comparte y navega estadísticas, retratos, historias, trasfondos y mucho más.
-			  </p>
-			  
-			  <h2 style="color: #e41900">
-			  ¿Sin inspiración?
-			  </h2>
-			  
-			  <p>
-			  No dudes en plagiar descaradamente el personaje de ese 
-			  buen samaritano que decidió compartir exactamente lo que tenías en mente.
-			  </p>
+			<div class="col-md-6 col-sm-12">
+				<div class="ratio" style="--bs-aspect-ratio: 100%">
+				  <iframe
+					src="/src/CS5e.pdf"
+					title="Hoja de Personaje"
+					style="padding-bottom: 50px"
+				  ></iframe>
+				</div>
 			</div>
-		  </div>
 		</div>
-	</section>
-	<!--Footer-->
+	</div>
 	<footer>
 		<section class="site-footer">
 			<div class="container-sm">
@@ -152,48 +127,4 @@
 		</section>
     </footer>
   </body>
- </html>
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+</html>
