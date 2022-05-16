@@ -7,3 +7,4 @@ if ($_SESSION['usuario'] == ''){
 	unset ($_SESSION['usuario']);
 }
 ?>
+?>
