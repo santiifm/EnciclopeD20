@@ -28,6 +28,7 @@ if (isset($_POST['login'])) {
 			$_SESSION['usuario'] = $usuario;
 			header("location:index.php");
 		}else{
+			unset ($_SESSION['usuario']);
 			include("login.php");
 		}
 	}else{
@@ -49,10 +50,11 @@ if (isset($_POST['registro'])) {
 		
 		$query = "INSERT INTO usuarios (usuario, contraseña) VALUES ('$usuario', '$contraseña')";
 		mysqli_query($db, $query);
-
-		$_SESSION['usuario'] = $usuario;
-		header('location: index.php');
+		
+		unset ($_SESSION['usuario']);
+		header('location: login.php');
 	}else{
+		unset ($_SESSION['usuario']);
 		include("registro.php");
 	}
 }
