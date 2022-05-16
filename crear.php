@@ -24,43 +24,7 @@ include("db.php");
   </head>
   <body>
 
-	<nav class="navbar navbar-expand-lg navbar-gradiente static-top shadow-sm">
-		<div class="col-lg mx-auto">
-			<a href="index.php">
-				<img src="./img/icon-header.png" alt="" width="368" height="88">
-			</a>
-		</div>
-		<div class="col-lg mx-auto">
-			<form class="form-inline">
-			  <input class="form-control border-0 bg-dark" type="search" placeholder="Buscar" aria-label="Buscar">
-			  <button class="btn btn-default bg-transparent border-0" type="submit">
-				<img src="./img/icon-searchwhite.png" width="22" height="22">
-			  </button>
-			</form>
-			<a class="btn bg-transparent" href="login.php">Iniciar Sesión</a>
-			<a class="btn bg-transparent" href="ultimo.php">Últimas Creaciones</a>
-			<?php
-			if (isset($_SESSION['usuario'])){
-			echo '<a class="btn bg-transparent" href = "crear.php" style="color: #e41900">Creá tu Personaje</a>';}
-			?>
-			<?php
-			if (isset($_SESSION['usuario'])){
-			echo '<a class="btn bg-transparent" href = "crear.php" style="color: #e41900">Mis Creaciones</a>';}
-			?>
-		</div>
-		<div class="col-lg mx-auto">
-			<p>Bienvenido
-				<?php if (isset($_SESSION['usuario'])){
-				echo $_SESSION['usuario'];}
-				else echo '<a href="registro.php" style="color: #e41900">Registrate</a> o <a href="login.php" style="color: #e41900">Iniciá Sesión</a>';
-				?>
-			</p>
-			<?php
-				if (isset($_SESSION['usuario'])){
-				echo '<p><a href = "logout.php" style="color: #e41900">Cerrar Sesión</a></p>';}
-			?>
-		</div>
-	</nav>
+	<?php include("navbar.php"); ?>
 	
 	<div class="container-fluid shadow-lg" style="max-width: 1600px">
 		<div class="row">
@@ -98,33 +62,6 @@ include("db.php");
 			</div>
 		</div>
 	</div>
-	<footer>
-		<section class="site-footer">
-			<div class="container-sm">
-				<div class="row">
-					<div class="col-md-4 col-sm-12 col-footer mx-auto">
-						  <p class="mx-auto text-center" style="font-size: 23px">Ayudame a mantener el sitio:</p>
-						  <dl class="pairs-crypto mx-auto">
-							<dd>BTC</dd>
-							<dt>bc1qvghgzdewy7tar78uy29ypqjwaur3ueecknln69</dt>
-						  </dl>
-						  <dl class="pairs-crypto mx-auto">
-							<dd>LTC</dd>
-							<dt>ME4ivwAUSTRd2qvMdYd1VMu3oWyrdowUHb</dt>
-						  </dl>
-					</div>
-					<div class="col-md-4 col-sm-12 col-footer mx-auto">
-						<img src="./img/icon-logo.png" style="height: 100px">
-					</div>
-					<div class="col-md-4 col-sm-12 col-footer mx-auto">
-						  <p>Redes Sociales:</p>
-						  <a href="https://www.facebook.com" class="btn boton-redes boton-facebook " target="_blank"></a>
-						  <a href="https://www.instagram.com/santiifm" class="btn boton-redes boton-instagram" target="_blank"></a>
-						  <a href="https://www.youtube.com/channel/UCVhExcSo8YMm9LwhWCK5O9A" class="btn boton-redes boton-youtube" target="_blank"></a>
-					</div>
-				</div>
-			</div>
-		</section>
-    </footer>
+	<?php include("footer.php"); ?>
   </body>
 </html>

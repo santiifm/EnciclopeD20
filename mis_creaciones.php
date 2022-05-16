@@ -1,5 +1,4 @@
 <?php
-include('db.php');
 @session_start();
 ?>
 <!DOCTYPE html>
@@ -11,7 +10,7 @@ include('db.php');
 	<!--Icono de Cabecera-->
 	<link rel="icon" href="./favicon.ico">
 
-    <title>Últimas Creaciones</title>
+    <title>Bienvenido a ED20!</title>
 	
 	<!--Bootstrap-->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -25,12 +24,13 @@ include('db.php');
   </head>
   
   <body>
+	
 	<?php include("navbar.php"); ?>
+	
 	<div class="container-fluid"><div class="main-carousel p-2" id="latestCarousel">
 		<div class="row">
-  
 		  <?php 
-			include('buscar_id.php');
+			include('buscar_nombre.php');
 			for($x = 0; $x < 4; $x++) {	  
 			  // This is the loop to display all
 			  // the stored blog posts
