@@ -3,7 +3,7 @@ include("db.php");
 session_start();
 $fecha = new DateTime();
 $str_fecha = $fecha->format('Y-m-d-H-i-s');
-$allowed_img = array('jpg', 'jpeg', 'png', 'JPG', 'JPEG', 'PNG', 'jpg_large');
+$allowed_img = array('jpg', 'jpeg', 'png', 'JPG', 'JPEG', 'PNG', 'jpg_large', 'bmp');
 
 if (isset($_POST['submit'])) { // si se selecciona enviar en el formulario
 	// nombre de los archivos subidos
