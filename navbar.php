@@ -51,7 +51,7 @@
 			?>
 		</div>
 		<div class="col-lg mx-auto">
-			<p>Bienvenido/a
+			<p>Bienvenido
 				<?php if (isset($_SESSION['usuario'])){
 				echo $_SESSION['usuario'];}
 				else echo '<a href="registro.php" style="color: #e41900">Registrate</a> o <a href="login.php" style="color: #e41900">Iniciá Sesión</a>';

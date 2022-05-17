@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 15, 2022 at 12:02 PM
+-- Generation Time: May 17, 2022 at 03:42 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.5
 
@@ -49,13 +49,6 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `usuarios`
---
-
-INSERT INTO `usuarios` (`id`, `usuario`, `contraseña`) VALUES
-(1, 'santiifm', 'cbd5c5342f08f299c2351dd83b8aace6');
-
---
 -- Indexes for dumped tables
 --
 
@@ -79,13 +72,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT for table `hojas`
 --
 ALTER TABLE `hojas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

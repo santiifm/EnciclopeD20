@@ -1,7 +1,6 @@
 <?php
 @session_start();
 include("db.php");
-error_reporting(E_ERROR | E_PARSE);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -25,8 +24,6 @@ error_reporting(E_ERROR | E_PARSE);
     <link rel="stylesheet" href="./styles.css">
   </head>
   
-	<?php include("navbar.php"); ?>
-	
   <body>
 	
 	<?php
@@ -38,8 +35,8 @@ error_reporting(E_ERROR | E_PARSE);
 	
 	$resultados_por_fila = 4;
 	$resultados_por_pagina = 8;
-	$primer_resultado = ($pagina - 1) * $resultados_por_fila;
-	$segundo_resultado = ($pagina - 1) * ($resultados_por_fila) + 4;
+	$primer_resultado = ($pagina - 1) * ($resultados_por_pagina);
+	$segundo_resultado = $primer_resultado + 4;
 	
 	$query = mysqli_query($db,"SELECT id FROM hojas");
 	$total_resultados = mysqli_num_rows($query);
@@ -51,7 +48,7 @@ error_reporting(E_ERROR | E_PARSE);
 		  <?php 
 			include('buscar_nombre.php');
 			for($x = $primer_resultado; $x < $primer_resultado + 4; $x++) {
-			  if(isset($x)) {
+			  if(isset($x) and $x<$total_resultados) {
 				$query = mysqli_query($db,"SELECT * FROM hojas WHERE id = '$idarray[$x]'");
 				  
 				$res = mysqli_fetch_array($query);
@@ -64,21 +61,22 @@ error_reporting(E_ERROR | E_PARSE);
 				$autor = $res['autor'];
 				$fecha = $res['fecha'];
 		  ?>
-			  <div class="col-md-3 col-sm-6 mx-auto">
-				<div class="carousel-cell p-2">
-				  <div class="card bg-dark border-0" style="width: 400px; text-align: center;">
-					<img class="card-img-top" src="<?php echo $img; ?>" alt="Card image cap">
-					<div class="card-body">
-					  <h1 style="color: #e41900"> <?php echo "<p style='font-size: 40px'>{$nombre}</p>";?> </h1>
-					  <?php echo "<p>creado por {$autor}</p>";?>
-					  <a href="<?= $pdf ?>" class="btn boton-redes boton-descarga" target="_blank"></a>
-					  <h2 class="card-subtitle mt-2 text-muted">
-					  <?php echo "<p>Subido el: {$fecha}</p>";?>
-					  </h2>
-					</div>
-				  </div>
+		  <div class="col-md-3 col-sm-6 mx-auto">
+			<div class="carousel-cell p-2">
+			  <div class="card bg-dark border-0" style="width: 400px; text-align: center;">
+				<img class="card-img-top" src=
+				  "<?php echo $img; ?>" alt="Card image cap">
+				<div class="card-body">
+				  <h1 style="color: #e41900"> <?php echo "<p style='font-size: 40px'>{$nombre}</p>";?> </h1>
+				  <?php echo "<p>creado por {$autor}</p>";?>
+				  <a href="<?= $pdf ?>" class="btn boton-redes boton-descarga" target="_blank"></a>
+				  <h2 class="card-subtitle mt-2 text-muted">
+				  <?php echo "<p>Subido el: {$fecha}</p>";?>
+				  </h2>
 				</div>
 			  </div>
+			</div>
+		  </div>
 		  <?php
 			  }
 			 }
@@ -88,10 +86,10 @@ error_reporting(E_ERROR | E_PARSE);
 	</div>
 	<div class="container-fluid"><div class="main-carousel p-2" id="latestCarousel">
 		<div class="row">
-		  <?php 
+			<?php 
 			include('buscar_nombre.php');
 			for($x = $segundo_resultado; $x < $segundo_resultado + 4; $x++) {
-			  if(isset($x)) {
+			  if(isset($x) and $x<$total_resultados) {
 				$query = mysqli_query($db,"SELECT * FROM hojas WHERE id = '$idarray[$x]'");
 				  
 				$res = mysqli_fetch_array($query);
@@ -103,7 +101,7 @@ error_reporting(E_ERROR | E_PARSE);
 				$img = 'subidas/img/' . $img;
 				$autor = $res['autor'];
 				$fecha = $res['fecha'];
-		  ?>
+			?>
 			  <div class="col-md-3 col-sm-6 mx-auto">
 				<div class="carousel-cell p-2">
 				  <div class="card bg-dark border-0" style="width: 400px; text-align: center;">
@@ -126,11 +124,15 @@ error_reporting(E_ERROR | E_PARSE);
 		</div>
 	  </div>
 	</div>
-	<?php
-	for($pagina = 1; $pagina <= $numero_paginas; $pagina++) {  
-        echo '<a href = "ulitmo.php?page=' . $pagina . '">' . $pagina . ' </a>';  
-    }
-	?>
+	<div class="container-sm bg-dark roundedshadow-lg p-3" style="padding-bottom: 15px; width: 50%">
+		<div class="col justify-content-center">
+			<?php
+			for($pagina = 1; $pagina <= $numero_paginas; $pagina++) {  
+				echo '<a class="btn boton-email mx-2" href = "mis_creaciones.php?pagina=' . $pagina . '">Pág.' . $pagina .' </a>';  
+			}
+			?>
+		</div>
+	</div>
   </body>
   <?php include("footer.php"); ?>
 </html>
