@@ -5,29 +5,28 @@ error_reporting(E_ERROR | E_PARSE);
 ?>
 <!DOCTYPE html>
 <html lang="es">
-  
   <?php include("navbar.php"); ?>
 	
   <body>
 	
 	<?php
-	
-	include('buscar_nombre.php');
-	
 	if (!isset ($_GET['pagina']) ) {  
 		$pagina = 1;  
 	} else {  
 		$pagina = $_GET['pagina'];
 	}
 	
+	include("buscar.php");
+	
 	$resultados_por_fila = 4;
 	$resultados_por_pagina = 8;
 	$primer_resultado = ($pagina - 1) * ($resultados_por_pagina);
 	$segundo_resultado = $primer_resultado + 4;
 	
-	$query = mysqli_query($db,"SELECT `id` FROM `hojas` WHERE autor = '".$_SESSION['usuario']."' ORDER BY fecha desc");
+	$query = mysqli_query($db,"SELECT id FROM hojas WHERE MATCH(nombre_pj,autor) AGAINST ('%" . $entrada . "%')");
 	$total_resultados = mysqli_num_rows($query);
 	$numero_paginas = ceil ($total_resultados / $resultados_por_pagina);
+	
 	?>
 	
 	<div class="container-lg" style="padding-top: 50px">
@@ -106,7 +105,7 @@ error_reporting(E_ERROR | E_PARSE);
 		<div class="col justify-content-center">
 			<?php
 			for($pagina = 1; $pagina <= $numero_paginas; $pagina++) {  
-				echo '<a class="btn boton-email mx-2" href = "mis_creaciones.php?pagina=' . $pagina . '">Pág.' . $pagina .' </a>';  
+				echo '<a class="btn boton-email mx-2" href = "resultado_busqueda.php?pagina=' . $pagina . '">Pág.' . $pagina .' </a>';  
 			}
 			?>
 		</div>

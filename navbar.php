@@ -18,6 +18,7 @@
     
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script  src="https://unpkg.com/puzzy-search/dist/index.js"></script>
 	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <!-- Stylesheet -->
     <link rel="stylesheet" href="./styles.css">
@@ -33,13 +34,14 @@
 			</a>
 		</div>
 		<div class="col-lg mx-auto">
-			<form class="form-inline">
-			  <input class="form-control border-0 bg-dark" type="search" placeholder="Buscar" aria-label="Buscar">
-			  <button class="btn btn-default bg-transparent border-0" type="submit">
-				<img src="./img/icon-searchwhite.png" width="22" height="22">
-			  </button>
+			<form class="form-inline" action="resultado_busqueda.php" method="get">
+			  <input class="form-control border-0 bg-dark" type="text" placeholder="Buscar" name="entrada" style="color: #FFFFFF">
+			  <input type="submit" class="btn btn-sm bg-dark"></input>
 			</form>
-			<a class="btn bg-transparent" href="login.php">Iniciar Sesión</a>
+			<?php
+			if (!isset($_SESSION['usuario'])){
+			echo '<a class="btn bg-transparent" href="login.php">Iniciar Sesión</a>';}
+			?>
 			<a class="btn bg-transparent" href="ultimo.php">Últimas Creaciones</a>
 			<?php
 			if (isset($_SESSION['usuario'])){
@@ -51,7 +53,7 @@
 			?>
 		</div>
 		<div class="col-lg mx-auto">
-			<p>Bienvenido
+			<p>Bienvenido/a
 				<?php if (isset($_SESSION['usuario'])){
 				echo $_SESSION['usuario'];}
 				else echo '<a href="registro.php" style="color: #e41900">Registrate</a> o <a href="login.php" style="color: #e41900">Iniciá Sesión</a>';
