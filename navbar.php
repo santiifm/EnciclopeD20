@@ -36,7 +36,7 @@
 		<div class="col-lg mx-auto">
 			<form class="form-inline" action="resultado_busqueda.php" method="get">
 			  <input class="form-control border-0 bg-dark" type="text" placeholder="Buscar" name="entrada" style="color: #FFFFFF">
-			  <input type="submit" class="btn btn-sm bg-dark"></input>
+			  <input type="submit" class="btn btn-sm bg-dark" value="Buscar"></input>
 			</form>
 			<?php
 			if (!isset($_SESSION['usuario'])){
