@@ -2,7 +2,7 @@
 include('db.php');
  
 /* To sort the id and limit the post by 4 */
-$sql = "SELECT * FROM hojas ORDER BY fecha desc limit 20 "; 
+$sql = "SELECT * FROM hojas ORDER BY fecha desc"; 
 $resultado = $db->query($sql);
 $sqlall= "SELECT * FROM hojas ORDER BY fecha desc";
 $resultadotodo = $db->query($sqlall);
