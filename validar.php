@@ -18,7 +18,7 @@ if (isset($_POST['login'])) {
 	if (!isset($_SESSION['Error'])) {
 		$contraseña = md5($contraseña);
 		
-		$query="SELECT*FROM usuarios where usuario = '$usuario' and contraseña = '$contraseña'";
+		$query="SELECT*FROM usuarios WHERE usuario = '$usuario' AND contraseña = '$contraseña'";
 		$resultado=mysqli_query($db,$query);
 
 		$filas=mysqli_num_rows($resultado);
