@@ -33,8 +33,8 @@
           <img src="./img/illust-1.png" alt="" class="img-fluid mx-5" />
         </div>
       </div>
-
     </header>
+	
 	<!--Main-->
 	<section class="section-feature">
         <div class="container-sm">
@@ -70,7 +70,7 @@
 	<!--Footer-->
 	<?php include("footer.php"); ?>
   </body>
- </html>
+</html>
  
  
  
