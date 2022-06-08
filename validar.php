@@ -40,21 +40,28 @@ if (isset($_POST['registro'])) {
 	$usuario = mysqli_real_escape_string($db, $_POST['usuario']);
     $contraseña_1 = mysqli_real_escape_string($db, $_POST['contraseña_1']);
     $contraseña_2 = mysqli_real_escape_string($db, $_POST['contraseña_2']);
+	$query = mysqli_query($db, "SELECT usuario FROM usuarios WHERE usuario = '$usuario'");
 	
 	if ($contraseña_1 != $contraseña_2) {$_SESSION['Error'] = "Las Contraseñas no Coinciden";}
 	if (empty($usuario)) { $_SESSION['Error'] = "Se Requiere un Nombre de Usuario"; }
     if (empty($contraseña_1)) { $_SESSION['Error'] = "Se Requiere una Contraseña"; }
+    if (empty($contraseña_1)) { $_SESSION['Error'] = "Se Requiere una Contraseña"; }
 	
-	if (!isset($_SESSION['Error'])) {
-		$contraseña = md5($contraseña_1);
-		
-		$query = "INSERT INTO usuarios (usuario, contraseña) VALUES ('$usuario', '$contraseña')";
-		mysqli_query($db, $query);
-		
-		unset ($_SESSION['usuario']);
-		header('location: login.php');
-	}else{
-		unset ($_SESSION['usuario']);
+	if (mysqli_num_rows($query) == 0){
+		if (!isset($_SESSION['Error'])) {
+			$contraseña = md5($contraseña_1);
+			
+			$query = "INSERT INTO usuarios (usuario, contraseña) VALUES ('$usuario', '$contraseña')";
+			mysqli_query($db, $query);
+			
+			unset ($_SESSION['usuario']);
+			header('location: login.php');
+		}else{
+			unset ($_SESSION['usuario']);
+			include("registro.php");
+		}
+	}else {
+		$_SESSION['Error'] = "Ese nombre de usuario ya está registrado. Intentá con otro.";
 		include("registro.php");
 	}
 }

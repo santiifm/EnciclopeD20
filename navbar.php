@@ -42,7 +42,7 @@
 			if (!isset($_SESSION['usuario'])){
 			echo '<a class="btn bg-transparent" href="login.php">Iniciar Sesión</a>';}
 			?>
-			<a class="btn bg-transparent" href="ultimo.php">Últimas Creaciones</a>
+			<a class="btn bg-transparent" href="creaciones.php">Navegar Creaciones</a>
 			<?php
 			if (isset($_SESSION['usuario'])){
 			echo '<a class="btn bg-transparent" href = "crear.php" style="color: #e41900">Creá tu Personaje</a>';}

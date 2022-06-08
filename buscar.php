@@ -1,30 +1,31 @@
 <?php
 include('db.php');
 
-  $entrada = $_GET ['entrada'];
-
-    $sql ="SELECT id FROM hojas WHERE MATCH(nombre_pj,autor) AGAINST ('%" . $entrada . "%')";
-
-    $query = mysqli_query($db,$sql);
-    $foundnum = mysqli_num_rows($query);
-
-
-    if ($foundnum==0)
-    {
-      //echo "We were unable to find a product with a search term of '<b>$entrada</b>'.";
+	if(!isset($_GET['entrada'])){
+        header('location: index.php');
     }
-    else{
-      //echo "<h1><strong> $foundnum Results Found for '".$entrada."' </strong></h1>";      
+    
+    $filtervalues = $_GET['entrada'];
 
-      
-      $sql ="SELECT id FROM hojas WHERE MATCH(nombre_pj,autor) AGAINST ('%" . $entrada . "%')";
-      $resultado = $db->query($sql);
-	  $idarray= array();
-
-
-      while($row = mysqli_fetch_array($resultado))
-      {
-        array_push($idarray,$row['id']);
-      }
-	}
+    $sql = "SELECT `id` FROM `hojas` WHERE CONCAT(nombre_pj,autor,fecha) LIKE '%$filtervalues%' ORDER BY id desc";
+    $resultado = $db->query($sql);
+    
+    if ($resultado->num_rows > 0) {  
+    
+        $arreglo_res = array();
+        while($row = $resultado->fetch_assoc()) {
+            array_push($arreglo_res,$row['id']); 
+        }
+    }
+    else {
+        echo "0 results";
+    }
+	
+	$resultados_por_fila = 4;
+	$resultados_por_pagina = 8;
+	$resultados = ($pagina - 1) * ($resultados_por_pagina);
+	
+	$query = mysqli_query($db,"SELECT `id` FROM `hojas` WHERE CONCAT(nombre_pj,autor,fecha) LIKE '%$filtervalues%' ORDER BY id desc");
+	$total_resultados = mysqli_num_rows($query);
+	$numero_paginas = ceil ($total_resultados / $resultados_por_pagina);
 ?>
