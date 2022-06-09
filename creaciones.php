@@ -18,7 +18,7 @@ include("db.php");
 	}
 	
 	 if (!isset ($_GET['orden']) ) {  
-		$orden = "fecha ASC";  
+		$orden = "fecha DESC";  
 	} else {  
 		$orden = $_GET['orden'];
 	}
@@ -65,9 +65,9 @@ include("db.php");
 						  <div class="card bg-dark rounded" style="width: 105%; text-align: center;">
 							<img class="card-img-top" src="<?php echo $img; ?>" alt="Card image cap">
 							<div class="card-body">
-							  <h1 style="color: #e41900"> <?php echo "<p style='font-size: 40px'>{$nombre}</p>";?> </h1>
-							  <?php echo "<p>creado por {$autor}</p>";?>
-							  <a href="<?= $pdf ?>" class="btn boton-redes boton-descarga" target="_blank"></a>
+							  <h1 style="color: #e41900"> <?php echo "<p style='font-size: 45px'>{$nombre}</p>";?> </h1>
+							  <?php echo "<p>Creado por: {$autor}</p>";?>
+							  <a href="<?= $pdf ?>" class="btn boton-email" target="_blank">Ver Hoja del Personaje</a>
 							  <h2 class="card-subtitle mt-2 text-muted">
 							  <?php echo "<p>Subido el: {$fecha}</p>";?>
 							  </h2>

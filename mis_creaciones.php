@@ -61,13 +61,13 @@ error_reporting(E_ERROR | E_PARSE);
 							<img class="card-img-top" src="<?php echo $img; ?>" alt="Card image cap">
 							<div class="card-body">
 							  <h1 style="color: #e41900"> <?php echo "<p style='font-size: 40px'>{$nombre}</p>";?> </h1>
-							  <?php echo "<p>creado por {$autor}</p>";?>
-							  <a href="<?= $pdf ?>" class="btn boton-redes boton-descarga" target="_blank"></a>
+							  <?php echo "<p>Creado por: {$autor}</p>";?>
+							  <a href="<?= $pdf ?>" class="btn boton-email" target="_blank">Ver Hoja del Personaje</a>
 							  <form action="operaciones.php" method="post">
 								<input type='hidden' name="eliminar" value="<?php echo $id; ?>" />
 								<input type='hidden' name="eliminar_img" value="<?php echo $pdf; ?>" />
 								<input type='hidden' name="eliminar_pdf" value="<?php echo $img; ?>" />
-								<button type="submit" class="btn boton-email" name="btn_eliminar">Eliminar</button>
+								<button type="submit" class="btn boton-email mt-2" name="btn_eliminar">Eliminar</button>
 							  </form>
 							  <h2 class="card-subtitle mt-2 text-muted">
 							  <?php echo "<p>Subido el: {$fecha}</p>";?>
