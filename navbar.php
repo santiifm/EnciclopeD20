@@ -5,12 +5,13 @@
 <html lang="es">
   <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="En EnciclopeD20 podés navegar cientos de personajes de DnD subidos por usuarios o compartir tus propios! Entrá y probá.">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
 	<!--Icono de Cabecera-->
 	<link rel="icon" href="./favicon.ico">
 
-    <title>Bienvenido a ED20!</title>
+    <title>Bienvenido a ED20, Tu Compañero de Aventuras de Rol! </title>
 	
 	<!--Bootstrap-->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"

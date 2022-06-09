@@ -44,6 +44,15 @@ p{
   font-size: 20px;
   text-shadow: 2px 2px #000000;
 }
+.btn_nombre:hover{
+  color:#FFFFFF;
+}
+.btn_nombre:link{
+  color:#e41900;
+}
+.btn_nombre:visited{
+  color:#e41900;
+}
 button,
 .btn {
   font-size: 25px;
