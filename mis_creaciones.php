@@ -84,13 +84,7 @@ error_reporting(E_ERROR | E_PARSE);
 				?>
 				</div>
 				</div>
-			<div class="container-lg bg-dark roundedshadow-lg p-3 mt-5 mb-5" style="padding-bottom: 50px; width: 50%">
-					<?php
-					for($pagina = 1; $pagina <= $numero_paginas; $pagina++) {  
-						echo '<a class="btn boton-email mx-2" href = "mis_creaciones.php?pagina=' . $pagina . '">Pág.' . $pagina .' </a>';  
-					}
-					?>
-			</div>
+		<?php include ("paginacion.php");?>
 		</div>
 	</section>
   <?php include("footer.php"); ?>

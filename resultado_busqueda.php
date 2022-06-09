@@ -62,15 +62,7 @@ include("db.php");
 				</div>
 				</div>
 		</div>
-		<div class="container-sm bg-dark roundedshadow-lg p-3 mt-5 mb-5" style="padding-bottom: 50px; width: 50%">
-			<div class="col justify-content-center">
-				<?php
-				for($pagina = 1; $pagina <= $numero_paginas; $pagina++) {  
-					echo '<a class="btn boton-email mx-2" href = "resultado_busqueda.php?pagina=' . $pagina . '">Pág.' . $pagina .' </a>';
-				}
-				?>
-			</div>
-		</div>
+		<?php include ("paginacion.php");?>
 	</section>
     <?php include("footer.php"); ?>
   </body>

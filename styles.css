@@ -77,6 +77,12 @@ button,
 .boton-email{
   background-color: #9e1200;
 }
+.boton-pag{
+  background-color: #9e1200;
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 5px;
+}
 .section-feature {
   padding-top: 50px;
   padding-bottom: 250px;
