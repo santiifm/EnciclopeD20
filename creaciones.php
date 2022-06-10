@@ -10,20 +10,7 @@ include("db.php");
 	
 	<?php
 	
-	
-	if (!isset ($_GET['pagina']) ) {  
-		$pagina = 1;  
-	} else {  
-		$pagina = $_GET['pagina'];
-	}
-	
-	 if (!isset ($_GET['orden']) ) {  
-		$orden = "fecha DESC";  
-	} else {  
-		$orden = $_GET['orden'];
-	}
-	
-	include('buscar_todo.php');
+	include('buscar_creaciones.php');
 
 	?>
 	<section>
@@ -67,7 +54,7 @@ include("db.php");
 							<div class="card-body">
 							  <h1> <?php echo "<a class='btn_nombre' href='resultado_busqueda.php?entrada={$nombre}{$autor}' style='font-size: 40px'>{$nombre}</a>";?> </h1>
 							  <?php echo "<p>Creado por: {$autor}</p>";?>
-							  <a href="<?= $pdf ?>" class="btn boton-email" target="_blank">Ver Hoja del Personaje</a>
+							  <a href="<?= $pdf ?>" class="btn boton-email" target="_blank" rel="noopener">Ver Hoja del Personaje</a>
 							  <h2 class="card-subtitle mt-2 text-muted">
 							  <?php echo "<p>Subido el: {$fecha}</p>";?>
 							  </h2>

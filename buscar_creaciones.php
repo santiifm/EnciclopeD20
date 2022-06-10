@@ -1,6 +1,18 @@
 <?php
 include('db.php');
 	
+	if (!isset ($_GET['pagina']) ) {  
+		$pagina = 1;  
+	} else {  
+		$pagina = $_GET['pagina'];
+	}
+	
+	 if (!isset ($_GET['orden']) ) {  
+		$orden = "fecha DESC";  
+	} else {  
+		$orden = $_GET['orden'];
+	}
+	
 	$sql = "SELECT * FROM hojas ORDER BY $orden"; 
 	$resultado = $db->query($sql);
 	   

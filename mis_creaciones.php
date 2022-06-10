@@ -12,30 +12,27 @@ error_reporting(E_ERROR | E_PARSE);
 	
 	<?php
 	
-	include('buscar_nombre.php');
+	include('buscar_mis_creaciones.php');
 	
-	if (!isset ($_GET['pagina']) ) {  
-		$pagina = 1;  
-	} else {  
-		$pagina = $_GET['pagina'];
-	}
-	
-	$resultados_por_fila = 4;
-	$resultados_por_pagina = 8;
-	$resultados = ($pagina - 1) * ($resultados_por_pagina);
-	
-	$query = mysqli_query($db,"SELECT `id` FROM `hojas` WHERE autor = '".$_SESSION['usuario']."' ORDER BY fecha DESC");
-	$total_resultados = mysqli_num_rows($query);
-	$numero_paginas = ceil ($total_resultados / $resultados_por_pagina);
 	?>
 	
 	<section>
+		<div class="container-sm" style="padding-top: 50px">
+			<div class="dropdown">
+			  <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Ordenar
+			  </button>
+			  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				<a class="dropdown-item" href="creaciones.php?pagina=<?php echo $pagina;?>&orden=fecha ASC">Fecha&#129045</a>
+				<a class="dropdown-item" href="creaciones.php?pagina=<?php echo $pagina;?>&orden=fecha DESC">Fecha&#129047</a>
+				<a class="dropdown-item" href="creaciones.php?pagina=<?php echo $pagina;?>&orden=autor ASC">Autor&#129045</a>
+				<a class="dropdown-item" href="creaciones.php?pagina=<?php echo $pagina;?>&orden=autor DESC">Autor&#129047</a>
+				<a class="dropdown-item" href="creaciones.php?pagina=<?php echo $pagina;?>&orden=nombre_pj ASC">Nombre Personaje&#129045</a>
+				<a class="dropdown-item" href="creaciones.php?pagina=<?php echo $pagina;?>&orden=nombre_pj DESC">Nombre Personaje&#129047</a>
+			  </div>
+			</div>
+		</div>
 		<div class="container-lg" style="padding-top: 50px">
-			<?php
-				if( isset($_SESSION['aviso']) ){
-				echo $_SESSION['aviso'];
-				unset($_SESSION['aviso']);}
-			?>
 			<?php for($y=1; $y<=2; $y++) {?>
 				<div class="pt-5">
 				<div class="row">
@@ -62,7 +59,7 @@ error_reporting(E_ERROR | E_PARSE);
 							<div class="card-body">
 							  <h1> <?php echo "<a class='btn_nombre' href='resultado_busqueda.php?entrada={$nombre}{$autor}' style='font-size: 40px'>{$nombre}</a>";?> </h1>
 							  <?php echo "<p>Creado por: {$autor}</p>";?>
-							  <a href="<?= $pdf ?>" class="btn boton-email" target="_blank">Ver Hoja del Personaje</a>
+							  <a href="<?= $pdf ?>" class="btn boton-email" target="_blank" rel="noopener">Ver Hoja del Personaje</a>
 							  <form action="operaciones.php" method="post">
 								<input type='hidden' name="eliminar" value="<?php echo $id; ?>" />
 								<input type='hidden' name="eliminar_img" value="<?php echo $pdf; ?>" />

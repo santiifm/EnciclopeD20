@@ -1,5 +1,17 @@
 <?php
 include('db.php');
+	
+	if (!isset ($_GET['pagina']) ) {  
+		$pagina = 1;  
+	} else {  
+		$pagina = $_GET['pagina'];
+	}
+	
+	 if (!isset ($_GET['orden']) ) {  
+		$orden = "fecha DESC";  
+	} else {  
+		$orden = $_GET['orden'];
+	}
 
 	if(!isset($_GET['entrada'])){
         header('location: index.php');
@@ -7,7 +19,7 @@ include('db.php');
     
     $filtervalues = $_GET['entrada'];
 
-    $sql = "SELECT `id` FROM `hojas` WHERE CONCAT(nombre_pj,autor,fecha) LIKE '%$filtervalues%' ORDER BY id desc";
+    $sql = "SELECT `id` FROM `hojas` WHERE CONCAT(nombre_pj,autor,fecha) LIKE '%$filtervalues%' ORDER BY $orden";
     $resultado = $db->query($sql);
     
     if ($resultado->num_rows > 0) {  

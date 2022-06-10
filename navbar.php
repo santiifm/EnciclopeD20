@@ -17,12 +17,21 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-	<script  src="https://unpkg.com/puzzy-search/dist/index.js"></script>
 	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	
     <!-- Stylesheet -->
     <link rel="stylesheet" href="./styles.css">
+	
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-YP7CYRBRK3"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-YP7CYRBRK3');
+	</script>
   </head>
   
   <body>
@@ -35,7 +44,7 @@
 			</a>
 		</div>
 		<div class="col-lg mx-auto">
-			<form class="form-inline" action="resultado_busqueda.php" method="get">
+			<form class="form-inline" action="busqueda.php" method="get">
 			  <input class="form-control border-0 bg-dark" type="text" placeholder="Buscar" name="entrada" style="color: #FFFFFF">
 			  <input type="submit" class="btn btn-sm bg-dark" value="Buscar"></input>
 			</form>

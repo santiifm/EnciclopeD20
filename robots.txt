@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /img/
+Disallow: /font/
+Disallow: /src/
+Disallow: /subidas/

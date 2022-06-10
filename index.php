@@ -16,7 +16,6 @@
       <div class="row justify-content-around">
 
         <div class="col-md-6 col-sm-12 pe-md-5 col-content my-auto">
-
 			<h1 style="color: #e41900">
 				Bienvenido a la primera enciclopedia de personajes de rol en español.
 			</h1>
@@ -38,9 +37,7 @@
 	<!--Main-->
 	<section class="section-feature">
         <div class="container-sm">
-
           <div class="row justify-content-between">
-
 			<div class="col-md-6 col-sm-12 col-image">
 				<img src="./img/illust-2.png" alt="" class="img-fluid">
 			</div>
