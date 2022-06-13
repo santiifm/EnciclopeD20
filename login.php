@@ -28,12 +28,14 @@
 					<input type="password" class="form-control" placeholder="Ingrese su Contraseña" name="contraseña">
 				</div>
 					<button type="submit" class="btn boton-email" name="login">Iniciar Sesión</button>
-				<p>
-					No estas registrado?
-					<a class="btn boton-email" href="registro.php">
-					Registrate!
-					</a>
-				</p>
+				<div class="mt-2 mb-2">
+					<p style="font-size: 25px">
+						No estas registrado?
+						<a class="btn boton-email" href="registro.php">
+							Registrate!
+						</a>
+					</p>
+				</div>
 			</form>	
 		</div>	
 	</div>	

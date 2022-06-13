@@ -62,17 +62,22 @@
 			echo '<a class="btn bg-transparent" href = "mis_creaciones.php" style="color: #e41900">Mis Creaciones</a>';}
 			?>
 		</div>
-		<div class="col-lg mx-auto">
-			<p>Bienvenido/a
+		<div class="col-lg">
+			<p class="mt-5" style="font-size: 25px;">Bienvenido/a
 				<?php if (isset($_SESSION['usuario'])){
 				echo $_SESSION['usuario'];}
 				else echo '<a href="registro.php" style="color: #e41900">Registrate</a> o <a href="login.php" style="color: #e41900">Iniciá Sesión</a>';
 				?>
 			</p>
-			<?php
-				if (isset($_SESSION['usuario'])){
-				echo '<p><a href = "logout.php" style="color: #e41900">Cerrar Sesión</a></p>';}
-			?>
+			<p class="mb-5">
+				<?php
+					if (isset($_SESSION['usuario'])){
+					echo '<a href = "perfil.php" style="color: #e41900">Mi Perfil</a>';}
+					echo '&nbsp;';
+					if (isset($_SESSION['usuario'])){
+					echo '<a href = "logout.php" style="color: #e41900">Cerrar Sesión</a>';}
+				?>
+			</p>
 		</div>
 	</nav>
   </body>

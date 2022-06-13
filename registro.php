@@ -34,12 +34,14 @@
 				  </div>
 				  <button type="submit" class="btn boton-email" name="registro">Registrarse</button>
 				</form>
-				<p>
-					Ya tienes una cuenta?
-					<a class="btn boton-email" href="login.php">
-						Ingresá Acá!
-					</a>
-				</p>
+				<div class="mt-2 mb-2">
+					<p style="font-size: 25px">
+						Ya tenés una cuenta?
+						<a class="btn boton-email" href="login.php">
+							Ingresá Acá!
+						</a>
+					</p>
+				</div>
 			</div>
 		</div>
 		</div>	
