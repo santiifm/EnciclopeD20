@@ -30,6 +30,12 @@ if (isset($_POST['submit'])) { // si se selecciona enviar en el formulario
 	if (empty($nombre)) {
 		$_SESSION['Error'] = "Tenés que ingresar un nombre";
 		header('location: crear.php');
+	} elseif (empty($pdf)) {
+		$_SESSION['Error'] = "Tenés que ingresar un PDF";
+		header('location: crear.php');
+	} elseif (empty($img)) {
+		$_SESSION['Error'] = "Tenés que ingresar una imagen";
+		header('location: crear.php');
 	} elseif (!in_array($extension_pdf, ['pdf'])){
 		$_SESSION['Error'] = "El archivo ingresado no es un PDF.";
 		header('location: crear.php');
