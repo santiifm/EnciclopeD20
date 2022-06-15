@@ -9,11 +9,6 @@ include("db.php");
   <body>
 	
 	<?php
-	if (!isset ($_GET['pagina']) ) {  
-		$pagina = 1;  
-	} else {  
-		$pagina = $_GET['pagina'];
-	}
 	
 	include("buscar_busqueda.php");
 	
@@ -55,10 +50,12 @@ include("db.php");
 						$fecha = $res['fecha'];
 				  ?>
 					  <div class="col-md-3 col-sm-6 mx-auto">
-						  <div class="card bg-dark rounded" style="width: 105%; text-align: center;">
-							<img class="card-img-top" src="<?php echo $img; ?>" alt="Card image cap">
+						  <div class="card card_pj bg-dark rounded" style="width: 105%; text-align: center;">
+                            <a href="busqueda.php?entrada=<?echo $autor.$fecha;?>">
+                                <img class="card-img-top" src="<?php echo $img; ?>" alt="Card image cap">
+                            </a>
 							<div class="card-body">
-							  <h1> <?php echo "<a class='btn_nombre' href='resultado_busqueda.php?entrada={$nombre}{$autor}' style='font-size: 40px'>{$nombre}</a>";?> </h1>
+							  <h1> <?php echo "<a class='btn_nombre' href='busqueda.php?entrada={$autor}{$fecha}' style='font-size: 40px'>{$nombre}</a>";?> </h1>
 							  <?php echo "<p>Creado por: {$autor}</p>";?>
 							  <a href="<?= $pdf ?>" class="btn boton-email" target="_blank" rel="noopener">Ver Hoja del Personaje</a>
 							  <h2 class="card-subtitle mt-2 text-muted">

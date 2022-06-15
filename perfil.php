@@ -21,18 +21,18 @@
 					?>
 				</p>
 			  <div class="form-group">
-				<label style="font-size: 20px">Nuevo Nombre de Usuario</label>
+				<label style="font-size: 20px">Cambiar Nombre de Usuario</label>
 				<input type="text" class="form-control" placeholder="Ingrese su Nombre de Usuario" name="usuario">
 			  </div>
-			  <button type="submit" class="btn boton-email" name="cambiar_perfil">Cambiar Nombre de Usuario</button>
-			  <div class="form-group mt-4">
-				<label style="font-size: 20px">Ingrese su Nueva Contraseña</label>
+			  <div class="form-group">
+				<label style="font-size: 20px">Nueva Contraseña</label>
 				<input type="password" class="form-control" placeholder="Ingrese su Contraseña" name="contraseña_1">
+			  </div>
+			  <div class="form-group">
 				<label style="font-size: 20px">Repita su Nueva Contraseña</label>
 				<input type="password" class="form-control" placeholder="Confirme su Contraseña" name="contraseña_2">
-			   </div>
 			  </div>
-			  <button type="submit" class="btn boton-email mb-3" name="cambiar_perfil">Cambiar Contraseña</button>
+			  <button type="submit" class="btn boton-email" name="cambiar_perfil">Cambiar</button>
 			</form>
 		</div>	
 	</div>	
