@@ -1,5 +1,6 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
+include("db.php");
 
 for($y=1; $y<=2; $y++) {?>
 	<div class="pt-4">
