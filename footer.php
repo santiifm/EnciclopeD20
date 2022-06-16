@@ -26,6 +26,7 @@
 						  <a href="https://www.facebook.com" class="btn boton-redes boton-facebook " target="_blank" rel="noopener"></a>
 						  <a href="https://www.instagram.com/santiifm" class="btn boton-redes boton-instagram" target="_blank"rel="noopener"></a>
 						  <a href="https://www.youtube.com/channel/UCVhExcSo8YMm9LwhWCK5O9A" class="btn boton-redes boton-youtube" target="_blank" rel="noopener"></a>
+						  <a href="https://github.com/santiifm/EnciclopeD20" class="btn boton-redes boton-github" target="_blank" rel="noopener"></a>
 					</div>
 				</div>
 			</div>

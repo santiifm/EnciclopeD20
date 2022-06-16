@@ -13,9 +13,9 @@ error_reporting(E_ERROR | E_PARSE);
 			<div class="row">
 				<div class="col-md-6 col-sm-12">
 					<ul class="list-group">
-					  <li class="list-group-item lista-pasos-item">Paso 1 - Completá el siguiente pdf editable haciendo click en cada uno de los campos vacíos.</li>
-					  <li class="list-group-item lista-pasos-item">Paso 2 - Apretá la flechita para descargar, ubicada arriba a la derecha, y guardá el pdf con tus cambios.</li>
-					  <li class="list-group-item lista-pasos-item">Paso 3 - Introducí el nombre, una foto y el pdf terminado de tu personaje en el formulario.</li>
+					  <li class="list-group-item lista-pasos-item">Paso 1 - Completá el siguiente PDF editable y descargalo con tus cambios o usá tu propia Character Sheet en formato PDF.</li>
+					  <li class="list-group-item lista-pasos-item">Paso 2 - Introducí el nombre, una foto y el PDF terminado de tu personaje en el formulario.</li>
+					  <li class="list-group-item lista-pasos-item">Paso 3 - Apretá el botón de subir y compartí tu personaje con el resto del mundo!</li>
 					</ul>
 					<form action="subir.php" method="post" enctype="multipart/form-data">
 						<div class="mb-3">
@@ -26,12 +26,13 @@ error_reporting(E_ERROR | E_PARSE);
 								unset($_SESSION['Error']);}
 							?>
 							</p>
-						  <input type="text" class="form-control" name="nombre" placeholder="Nombre del Personaje"required></textarea>
-						  <label style="padding-top: 10px">Subir PDF</label>
+						  <label class="mt-2" style="font-size: 20px">Ingresar Nombre del Personaje</label>
+						  <input type="text" class="form-control mt-2" name="nombre" placeholder="Nombre del Personaje" required></textarea>
+						  <label class="mt-2" style="font-size: 20px">Subir PDF</label>
 						  <input type="file"  name="pdf" class="form-control form-control-lg" id="formFile" style="font-size: 25px" required>
-						  <label style="padding-top: 10px">Subir Foto</label>
+						  <label class="mt-2" style="font-size: 20px">Subir Foto</label>
 						  <input type="file"  name="img" class="form-control form-control-lg" id="formFile" style="font-size: 25px" required>
-						  <input type="submit" name="submit" class="btn boton-email my-3" value="Subir Archivos">
+						  <input type="submit" name="submit" class="btn boton-email my-3" value="Subir Personaje">
 						</div>
 					</form>
 				</div>

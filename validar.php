@@ -19,12 +19,16 @@ if (isset($_POST['login'])) {
 		
 		$query="SELECT*FROM usuarios where usuario = '$usuario' and contraseña = '$contraseña'";
 		$resultado=mysqli_query($db,$query);
+		$query_tipo = mysqli_query($db, "SELECT tipo FROM usuarios where usuario = '$usuario' and contraseña = '$contraseña'");
 
 		$filas=mysqli_num_rows($resultado);
 		if (empty($filas)) { $_SESSION['Error'] = "El usuario y la contraseña no coinciden."; }
 		
 		if($filas){
+			$res = mysqli_fetch_array($query_tipo);
+			$usuario_tipo = $res['tipo'];
 			$_SESSION['usuario'] = $usuario;
+			$_SESSION['usuario_tipo'] = $usuario_tipo;
 			header("location:index.php");
 		}else{
 			unset ($_SESSION['usuario']);
@@ -51,7 +55,7 @@ if (isset($_POST['registro'])) {
 		if (!isset($_SESSION['Error'])) {
 			$contraseña = md5($contraseña_1);
 			
-			$query = "INSERT INTO usuarios (usuario, contraseña) VALUES ('$usuario', '$contraseña')";
+			$query = "INSERT INTO usuarios (usuario, contraseña, tipo) VALUES ('$usuario', '$contraseña', user)";
 			mysqli_query($db, $query);
 			
 			unset ($_SESSION['usuario']);

@@ -21,9 +21,9 @@ include('db.php');
 	   
 	if ($resultado->num_rows > 0) {  
 	  
-		$idarray= array();
+		$arreglo_res= array();
 		while($row = mysqli_fetch_array($resultado)) {
-			array_push($idarray,$row['id']); 
+			array_push($arreglo_res, $row['id']); 
 		} 
 	}
 	else {

@@ -7,9 +7,9 @@ $img="";
 
 if (isset($_POST['btn_eliminar'])) {
 	
-	$id = mysqli_real_escape_string($db, $_POST['eliminar']);
-	$pdf = mysqli_real_escape_string($db, $_POST['eliminar_pdf']);
-	$img = mysqli_real_escape_string($db, $_POST['eliminar_img']);
+	$id = mysqli_real_escape_string($db, $_POST['id']);
+	$pdf = mysqli_real_escape_string($db, $_POST['pdf']);
+	$img = mysqli_real_escape_string($db, $_POST['img']);
 	$query = "DELETE FROM hojas WHERE id = '$id'";
 	if(mysqli_query($db, $query)){
 		unlink($pdf);
@@ -18,5 +18,5 @@ if (isset($_POST['btn_eliminar'])) {
 	}
 	
 	header('location: mis_creaciones.php');
-}
+}	
 ?>

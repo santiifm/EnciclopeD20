@@ -19,15 +19,15 @@
 					unset($_SESSION['Error']);}
 					?>
 				</p>
-				<div class="form-group">
+				<div class="form-group mt-2">
 					<label style="font-size: 20px">Nombre de Usuario</label>
 					<input type="text" class="form-control" placeholder="Ingrese su Nombre de Usuario" name="usuario">
 				</div>
-				<div class="form-group">
+				<div class="form-group mt-2">
 					<label style="font-size: 20px">Contraseña</label>
 					<input type="password" class="form-control" placeholder="Ingrese su Contraseña" name="contraseña">
 				</div>
-					<button type="submit" class="btn boton-email" name="login">Iniciar Sesión</button>
+					<button type="submit" class="btn boton-email mt-3" name="login">Iniciar Sesión</button>
 				<div class="mt-2 mb-2">
 					<p style="font-size: 25px">
 						No estas registrado?
