@@ -28,7 +28,7 @@ for($y=1; $y<=2; $y++) {?>
 					<img class="card-img-top" src="<?php echo $img; ?>" alt="Card image cap">
 				</a>
 				<div class="card-body">
-				  <h1> <?php echo "<a class='btn_nombre' href='resultado_busqueda.php?entrada={$autor}{$fecha}' style='font-size: 40px'>{$nombre}</a>";?> </h1>
+				  <h1> <?php echo "<a class='btn_nombre' href='busqueda.php?entrada={$autor}{$fecha}' style='font-size: 40px'>{$nombre}</a>";?> </h1>
 				  <?php echo "<p>Creado por: {$autor}</p>";?>
 				  <a href="<?= $pdf ?>" class="btn boton-email" target="_blank" rel="noopener">Ver Hoja del Personaje</a>
 				  <?php 

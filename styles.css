@@ -44,6 +44,18 @@ p{
   font-size: 20px;
   text-shadow: 2px 2px #000000;
 }
+a:link{
+  text-decoration: none;
+}
+a:visited{ 
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: none;
+}
+a:active{
+  text-decoration: none;
+}
 .btn_nombre:hover{
   color:#FFFFFF;
 }
