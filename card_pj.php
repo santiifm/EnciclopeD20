@@ -30,7 +30,7 @@ for($y=1; $y<=2; $y++) {?>
 				<div class="card-body">
 				  <h1> <?php echo "<a class='btn_nombre' href='personaje.php?id={$id}' style='font-size: 40px'>{$nombre}</a>";?> </h1>
 				  <?php echo "<p>Creado por: {$autor}</p>";?>
-				  <a href="personaje.php?id=<?= $id;?>" class="btn boton-email" target="_blank" rel="noopener">Ver Personaje</a>
+				  <a href="personaje.php?id=<?= $id;?>" class="btn boton-email">Ver Personaje</a>
 				</div>
 			  </div>
 			</div>

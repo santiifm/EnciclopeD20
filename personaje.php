@@ -14,7 +14,7 @@ error_reporting(E_ERROR | E_PARSE);
 		<div class="container-fluid mt-5 pe-5">
 			<div class="row justify-content-between text-center mx-auto">
 				<div class="col-md-6 col-sm-12 my-auto">
-					<h1 class="text-break" style="color: #e41900; font-size: 80px;"><?=$nombre?><h1>
+					<h1 class="text-break" style="color: #e41900; font-size: 70px;"><?=$nombre?><h1>
 					<h4>Creado por: <?=$autor?></h4>
 					<?php
 					if ($_SESSION['usuario_tipo'] == "admin" or $autor == $_SESSION['usuario']) {
