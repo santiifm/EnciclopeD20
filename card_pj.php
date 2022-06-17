@@ -24,28 +24,13 @@ for($y=1; $y<=2; $y++) {?>
 			
 			<div class="col-md-3 col-sm-6 mx-auto">
 			  <div class="card card_pj bg-dark rounded" style="width: 105%; text-align: center;">
-				<a href="busqueda.php?entrada=<?echo $autor.$fecha;?>">
-					<img class="card-img-top" src="<?php echo $img; ?>" alt="Card image cap">
+				<a href="personaje.php?id=<?= $id;?>">
+					<img class="card-img-top" src="<?= $img;?>" alt="Card image cap">
 				</a>
 				<div class="card-body">
-				  <h1> <?php echo "<a class='btn_nombre' href='busqueda.php?entrada={$autor}{$fecha}' style='font-size: 40px'>{$nombre}</a>";?> </h1>
+				  <h1> <?php echo "<a class='btn_nombre' href='personaje.php?id={$id}' style='font-size: 40px'>{$nombre}</a>";?> </h1>
 				  <?php echo "<p>Creado por: {$autor}</p>";?>
-				  <a href="<?= $pdf ?>" class="btn boton-email" target="_blank" rel="noopener">Ver Hoja del Personaje</a>
-				  <?php 
-				  if ($_SESSION['usuario_tipo'] == "admin" or $autor == $_SESSION['usuario']) {
-				  ?>
-					  <form action="operaciones.php" method="post">
-						<input type='hidden' name="id" value="<?php echo $id; ?>" />
-						<input type='hidden' name="img" value="<?php echo $pdf; ?>" />
-						<input type='hidden' name="pdf" value="<?php echo $img; ?>" />
-						<button type="submit" class="btn boton-email mt-2" name="btn_eliminar">Eliminar</button>
-					  </form>
-				  <?php 
-				  }
-				  ?>
-				  <h2 class="card-subtitle mt-2">
-				  <?php echo "<p>Subido el: {$fecha}</p>";?>
-				  </h2>
+				  <a href="personaje.php?id=<?= $id;?>" class="btn boton-email" target="_blank" rel="noopener">Ver Personaje</a>
 				</div>
 			  </div>
 			</div>

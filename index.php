@@ -12,26 +12,26 @@
 	
 	<header>
 	  <section class="site-header">
-	  <div class="container-sm">
-      <div class="row justify-content-around">
-
-        <div class="col-md-6 col-sm-12 pe-md-5 col-content my-auto">
-			<h1 style="color: #e41900">
-				Bienvenido a la primera enciclopedia de personajes de rol en español.
-			</h1>
-			<h4>
-				El lugar perfecto para guardar y mantener cuenta de tus personajes de rol creados.
-				Crea tu perfil ahora y empieza a compartir tus creaciones!
-			</h4>
-			<?php 	if (isset($_SESSION['usuario'])){
-						echo '<a href = "/crear.php" class="btn boton-email my-2">Crear un Personaje</a>';
-					}else echo'<a href="./registro.php" class="btn boton-email my-2">Entrar a la Cripta</a>';
-			?>
-        </div>
-        <div class="col-md-6 col-sm-12 col-image">
-          <img src="./img/illust-1.png" alt="" class="img-fluid mx-5" />
-        </div>
-      </div>
+		  <div class="container-sm">
+			<div class="row justify-content-around">
+				<div class="col-md-6 col-sm-12 my-auto">
+					<h1 style="color: #e41900">
+						Bienvenido a la primera enciclopedia de personajes de rol en español.
+					</h1>
+					<h4>
+						El lugar perfecto para guardar y mantener cuenta de tus personajes de rol creados.
+						Crea tu perfil ahora y empieza a compartir tus creaciones!
+					</h4>
+					<?php 	if (isset($_SESSION['usuario'])){
+								echo '<a href = "/crear.php" class="btn boton-email my-2">Crear un Personaje</a>';
+							}else echo'<a href="./registro.php" class="btn boton-email my-2">Entrar a la Cripta</a>';
+					?>
+				</div>
+				<div class="col-md-6 col-sm-12">
+				  <img src="./img/illust-1.png" alt="" class="img-fluid mx-5" />
+				</div>
+			</div>
+		</section>
     </header>
 	
 	<!--Main-->

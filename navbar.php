@@ -43,7 +43,7 @@
 			</a>
 		</div>
 		<div class="col-lg mx-auto">
-			<form class="form-inline" action="busqueda.php" method="get">
+			<form action="busqueda.php" method="get">
 				<div class="row">
 					<div class="col-sm-10">
 						  <input class="form-control border-0 bg-dark" type="text" placeholder="Buscar" name="entrada" style="color: #FFFFFF">
