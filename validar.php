@@ -218,8 +218,6 @@ if (isset($_POST['cambiar_pj'])) {
 
 	$pdf = $_FILES['pdf']['tmp_name'];
 	$img = $_FILES['img']['tmp_name'];
-	$nombre = mysqli_real_escape_string($db, $_POST['nombre']);
-	$autor = $_SESSION['usuario'];
 	
 	if (!empty($pdf) && !in_array($extension_pdf, ['pdf'])){
 		$_SESSION['Error'] = "El archivo ingresado no es un PDF.";
@@ -230,53 +228,30 @@ if (isset($_POST['cambiar_pj'])) {
 	}
 	
 	if (!isset($_SESSION['Error'])){
-		if (!empty($nombre) && empty($pdf) && empty($img)){
+		if (!empty($nombre)){			
+		$query = "UPDATE `hojas` SET `nombre_pj` = '$nombre' WHERE `id` = '$id'";
+		mysqli_query($db, $query);
+		
+		}	
+		if (!empty($pdf)){
+		move_uploaded_file($pdf, $destino_pdf);
+		$query = "UPDATE `hojas` SET `pdf` = '$nombre_pdf' WHERE `id` = '$id'";
+		mysqli_query($db, $query);
 			
-			$query = "UPDATE `hojas` SET `nombre_pj` = '$nombre' WHERE `id` = '$id'";
-			mysqli_query($db, $query);
-			header('location: personaje.php?id='.$id.'');
+		}	
+		if (!empty($img)){
+		move_uploaded_file($img, $destino_img);
+		$query = "UPDATE `hojas` SET `img` = '$nombre_img' WHERE `id` = '$id'";
+		mysqli_query($db, $query);
 			
-			} 	else if (!empty($nombre) && !empty($pdf) && empty($img)){
-				
-				$query = "UPDATE `hojas` SET `nombre_pj` = '$nombre', pdf = '$nombre_pdf' WHERE `id` = '$id'";
-				mysqli_query($db, $query);
-				header('location: personaje.php?id='.$id.'');
-				
-				} 	else if (!empty($nombre) && !empty($pdf) && !empty($img)){
-					
-					$query = "UPDATE `hojas` SET `nombre_pj` = '$nombre', pdf = '$nombre_pdf', img = '$nombre_img' WHERE `id` = '$id'";
-					mysqli_query($db, $query);
-					header('location: personaje.php?id='.$id.'');
-					
-					} 	else if (empty($nombre) && !empty($pdf) && empty($img)){
-					
-						$query = "UPDATE `hojas` SET pdf = '$nombre_pdf' WHERE `id` = '$id'";
-						mysqli_query($db, $query);
-						header('location: personaje.php?id='.$id.'');
-					
-						} 	else if (empty($nombre) && !empty($pdf) && !empty($img)){
-					
-							$query = "UPDATE `hojas` SET pdf = '$nombre_pdf', img = '$nombre_img' WHERE `id` = '$id'";
-							mysqli_query($db, $query);
-							header('location: personaje.php?id='.$id.'');
-					
-							} 	else if (empty($nombre) && empty($pdf) && !empty($img)){
-					
-								$query = "UPDATE `hojas` SET img = '$nombre_img' WHERE `id` = '$id'";
-								mysqli_query($db, $query);
-								header('location: personaje.php?id='.$id.'');
-								
-								} 	else if (!empty($nombre) && empty($pdf) && !empty($img)){
-					
-									$query = "UPDATE `hojas` SET nombre_pj = '$nombre', img = '$nombre_img' WHERE `id` = '$id'";
-									mysqli_query($db, $query);
-									header('location: personaje.php?id='.$id.'');
-									
-									} 	else{
-										header('location: personaje.php?id='.$id.'');
-									}
+		}
+		
+		header('location: personaje.php?id='.$id.'');
+		
 	}	else{
+		
 		header('location: modificar.php?id='.$id.'');
+	
 	}
 }
 

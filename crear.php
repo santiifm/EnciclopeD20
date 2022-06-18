@@ -28,10 +28,10 @@ error_reporting(E_ERROR | E_PARSE);
 							</p>
 						  <label class="mt-2" style="font-size: 20px">Ingresar Nombre del Personaje</label>
 						  <input type="text" class="form-control mt-2" name="nombre" placeholder="Nombre del Personaje" required></textarea>
-						  <label class="mt-2" style="font-size: 20px">Subir PDF</label>
-						  <input type="file"  name="pdf" class="form-control form-control-lg" id="formFile" style="font-size: 25px" required>
 						  <label class="mt-2" style="font-size: 20px">Subir Retrato</label>
 						  <input type="file"  name="img" class="form-control form-control-lg" id="formFile" style="font-size: 25px" required>
+						  <label class="mt-2" style="font-size: 20px">Subir PDF</label>
+						  <input type="file"  name="pdf" class="form-control form-control-lg" id="formFile" style="font-size: 25px" required>
 						  <input type="submit" name="submit" class="btn boton-email my-3" value="Subir Personaje">
 						</div>
 					</form>
