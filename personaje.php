@@ -11,9 +11,9 @@ error_reporting(E_ERROR | E_PARSE);
 		include ("get_pj.php");
 	?>
 	<section class="section_pj">
-		<div class="container-fluid mt-5 pe-5">
-			<div class="row justify-content-between text-center mx-auto">
-				<div class="col-md-6 col-sm-12 my-auto">
+		<div class="container mt-5 pe-5 bg-dark" style="max-width: 90%;">
+			<div class="row justify-content-center text-center mx-auto">
+				<div class="col-lg-6 col-md-12 mb-5 mt-3">
 					<h1 class="text-break" style="color: #e41900; font-size: 70px;"><?=$nombre?><h1>
 					<h4>Creado por: <?=$autor?></h4>
 					<?php
@@ -30,11 +30,11 @@ error_reporting(E_ERROR | E_PARSE);
 					<?php 
 					}
 					?>
-					<img  class="pt-2" src="<?= $img?>" alt="img_pj" style="width:50%; height:auto;">
+					<img  class="shadow-lg rounded mt-3" src="<?= $img?>" alt="img_pj" style="width:70%; height:auto;">
 				</div>
-				<div class="col-md-6 col-sm-12 pt-5">
-					<div class="ratio" style="--bs-aspect-ratio: 100%">
-					  <iframe src="<?= $pdf?>" title="Hoja de Personaje" style="padding-bottom: 50px"></iframe>
+				<div class="col-lg-6 col-md-12 pt-5">
+					<div class="ratio rounded" style="--bs-aspect-ratio: 140%">
+					  <iframe src="<?= $pdf?>" title="Hoja de Personaje" style="height: 100%; width: 100%;padding-bottom: 50px"></iframe>
 					</div>
 				</div>
 			</div>

@@ -15,14 +15,14 @@ error_reporting(E_ERROR | E_PARSE);
 		<div class="container-sm"  style="padding-top: 100px">
 		</div>
 		<div class="container-sm bg-dark rounded shadow-lg p-3 mb-5" style="padding-bottom: 15px">
-			<div class="row text-center">
-				<div class="col-md-6 col-sm-12">
+			<div class="row">
+				<div class="col-md-6 col-sm-12 text-center">
 					<h1 style="display: inline-block">Modificando a: </h1>
 					<h1 class="text-break" style="color: #e41900; display:inline-block"> <?=$nombre?><h1>
-					<img  class="pt-2" src="<?= $img?>" alt="img_pj" style="width:50%; height:auto;">
+					<img  class="shadow-lg rounded pt-2" src="<?= $img?>" alt="img_pj" style="width:50%; height:auto;">
 				</div>
 				<div class="col-md-6 col-sm-12">
-					<form action="validar.php" method="post">
+					<form action="validar.php" method="post" enctype="multipart/form-data">
 						<p style="color: #e41900">
 							<?php
 							if( isset($_SESSION['Error']) ){
@@ -31,20 +31,14 @@ error_reporting(E_ERROR | E_PARSE);
 							}
 							?>
 						</p>
-					  <div class="form-group mt-2 mb-2">
-						<label style="font-size: 20px">Cambiar Nombre de Personaje</label>
+						<label class="mt-2 mb-2" style="font-size: 20px">Cambiar Nombre de Personaje</label>
 						<input type="text" class="form-control" placeholder="Ingrese el Nombre del Personaje" name="nombre">
-					  </div>
-					  <div class="form-group mt-2 mb-2">
-						<label style="font-size: 20px">Cambiar Retrato</label>
+						<label class="mt-2 mb-2" style="font-size: 20px">Cambiar Retrato</label>
 						<input type="file"  name="img" class="form-control form-control-lg" id="formFile" style="font-size: 25px">
-					  </div>
-					  <div class="form-group mt-2 mb-2">
-						<label style="font-size: 20px">Cambiar Hoja de Personaje</label>
+						<label class="mt-2 mb-2" style="font-size: 20px">Cambiar Hoja de Personaje</label>
 						<input type="file"  name="pdf" class="form-control form-control-lg" id="formFile" style="font-size: 25px">
-					  </div>
-					  <input type='hidden' name="id" value="<?php echo $id; ?>" />
-					  <button type="submit" class="btn boton-email" name="cambiar_pj">Cambiar</button>
+						<input type='hidden' name="id" value="<?php echo $id; ?>" />
+						<input type="submit" class="btn boton-email mt-3" name="cambiar_pj" value="Cambiar">
 					</form>
 				</div>
 			</div>	
