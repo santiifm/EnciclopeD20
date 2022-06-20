@@ -63,7 +63,7 @@ if (isset($_POST['registro'])) {
 		if (!isset($_SESSION['Error'])) {
 			$contraseña = md5($contraseña_1);
 			
-			$query = "INSERT INTO usuarios (usuario, contraseña, tipo) VALUES ('$usuario', '$contraseña', user)";
+			$query = "INSERT INTO usuarios (usuario, contraseña, tipo) VALUES ('$usuario', '$contraseña', 'user')";
 			mysqli_query($db, $query);
 			
 			unset ($_SESSION['usuario']);
