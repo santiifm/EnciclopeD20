@@ -4,12 +4,16 @@ error_reporting(E_ERROR | E_PARSE);
 ?>
 <!DOCTYPE html>
 <html lang="es">
-  <body>
 
-	<?php include("navbar.php"); 
-	if ($_SESSION['usuario']!="" && isset($_SESSION['usuario'])){ ?>
+  <?php include("navbar.php"); ?>
+  
+  <body>
+  
+	<?php if ($_SESSION['usuario']!="" && isset($_SESSION['usuario'])){ ?>
 	
-		<div class="container-fluid shadow-lg mt-5 mb-5" style="max-width: 1600px">
+	<script src="./js/validarcrear.js"></script>
+	
+		<div class="container-fluid container-crear shadow-lg mt-5 mb-5">
 			<div class="row">
 				<div class="col-md-6 col-sm-12">
 					<ul class="list-group">
@@ -17,7 +21,7 @@ error_reporting(E_ERROR | E_PARSE);
 					  <li class="list-group-item lista-pasos-item">Paso 2 - Introducí el nombre, una foto y el PDF terminado de tu personaje en el formulario.</li>
 					  <li class="list-group-item lista-pasos-item">Paso 3 - Apretá el botón de subir y compartí tu personaje con el resto del mundo!</li>
 					</ul>
-					<form action="validar.php" method="post" enctype="multipart/form-data">
+					<form id="formCrear" action="validar.php" method="post" onsubmit="return validarForm()" enctype="multipart/form-data">
 						<div class="mb-3">
 							<p style="color: #e41900">
 							<?php
@@ -27,11 +31,11 @@ error_reporting(E_ERROR | E_PARSE);
 							?>
 							</p>
 						  <label class="mt-2" style="font-size: 20px">Ingresar Nombre del Personaje</label>
-						  <input type="text" class="form-control mt-2" name="nombre" placeholder="Nombre del Personaje" required></textarea>
+						  <input type="text" class="form-control mt-2" name="nombre" placeholder="Nombre del Personaje"></textarea>
 						  <label class="mt-2" style="font-size: 20px">Subir Retrato</label>
-						  <input type="file"  name="img" class="form-control form-control-lg" id="formFile" style="font-size: 25px" required>
+						  <input type="file"  name="img" class="form-control form-control-lg" id="formFile" style="font-size: 25px">
 						  <label class="mt-2" style="font-size: 20px">Subir PDF</label>
-						  <input type="file"  name="pdf" class="form-control form-control-lg" id="formFile" style="font-size: 25px" required>
+						  <input type="file"  name="pdf" class="form-control form-control-lg" id="formFile2" style="font-size: 25px">
 						  <input type="submit" name="submit" class="btn boton-email my-3" value="Subir Personaje">
 						</div>
 					</form>

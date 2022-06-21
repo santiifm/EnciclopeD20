@@ -9,7 +9,7 @@
 	
 	<div class="container-sm"  style="padding-top: 100px">
 	</div>
-	<div class="container-sm bg-dark rounded shadow-lg p-3 mb-5" style="padding-bottom: 15px">
+	<div class="container-sm bg-dark rounded shadow-lg p-3 mb-5" style="padding-bottom: 15px; width: 30em;">
 		<div class="justify-content-center">
 			<form action="validar.php" method="post">
 				<p style="color: #e41900">
@@ -32,7 +32,7 @@
 				<label style="font-size: 20px">Repita su Nueva Contraseña</label>
 				<input type="password" class="form-control" placeholder="Confirme su Contraseña" name="contraseña_2">
 			  </div>
-			  <button type="submit" class="btn boton-email" name="cambiar_perfil">Cambiar</button>
+			  <button type="submit" class="btn boton-email mt-3" name="cambiar_perfil">Cambiar</button>
 			</form>
 		</div>	
 	</div>	

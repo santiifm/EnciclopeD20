@@ -39,14 +39,9 @@ error_reporting(E_ERROR | E_PARSE);
 				</div>
 			</div>
 		</div>
-		<div class="container shadow-lg mt-5 mb-5">
-			<div class="col-md-6 col-sm-12">
-			</div>
-		</div>
 	</section>
 	<?php
 	include("footer.php");
 	?>
-	
   </body>
 </html>

@@ -53,10 +53,6 @@
 					</div>
 				</div>
 			</form>
-			<?php
-			if (!isset($_SESSION['usuario'])){
-			echo '<a class="btn bg-transparent" href="login.php">Iniciar Sesión</a>';}
-			?>
 			<a class="btn bg-transparent" href="creaciones.php">Navegar Creaciones</a>
 			<?php
 			if (isset($_SESSION['usuario'])){

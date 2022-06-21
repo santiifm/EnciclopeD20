@@ -111,6 +111,10 @@ button,
   background-position: center calc(100% - 100px);
   background-size: cover;
 }
+.container-crear{
+  background: url('./img/bg-highlight.png') no-repeat center fixed;
+  max-width: 1600px;
+}
 .pairs-crypto{
     flex: 1 0 30%;
     white-space: nowrap;

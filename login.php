@@ -3,15 +3,18 @@
 ?>
 <!DOCTYPE html>
 <html lang="es">
-  <body>
 
 	<?php include("navbar.php"); ?>
 	
+  <body>
+	
+	<script src="./js/validarlogin.js"></script>
+	
 	<div class="container-sm"  style="padding-top: 100px">
 	</div>
-	<div class="container-sm bg-dark rounded shadow-lg p-3 mb-5" style="padding-bottom: 15px">
+	<div class="container-lg bg-dark rounded shadow-lg p-3 mb-5" style="padding-bottom: 15px; width: 30em;">
 		<div class="justify-content-center">
-			<form action="validar.php" method="post">
+			<form id="formLogin" action="validar.php" onsubmit="return validarForm()" method="post" required>
 				<p style="color: #e41900">
 					<?php
 					if( isset($_SESSION['Error']) ){
@@ -19,15 +22,15 @@
 					unset($_SESSION['Error']);}
 					?>
 				</p>
-				<div class="form-group mt-2">
+				<div class="form-field mt-2">
 					<label style="font-size: 20px">Nombre de Usuario</label>
 					<input type="text" class="form-control" placeholder="Ingrese su Nombre de Usuario" name="usuario">
 				</div>
-				<div class="form-group mt-2">
+				<div class="form-field mt-2">
 					<label style="font-size: 20px">Contraseña</label>
 					<input type="password" class="form-control" placeholder="Ingrese su Contraseña" name="contraseña">
 				</div>
-					<button type="submit" class="btn boton-email mt-3" name="login">Iniciar Sesión</button>
+				<button type="submit" class="btn boton-email mt-3" name="login">Iniciar Sesión</button>
 				<div class="mt-2 mb-2">
 					<p style="font-size: 25px">
 						No estas registrado?

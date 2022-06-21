@@ -1,3 +1,3 @@
 <?php
-$db=mysqli_connect("localhost","root","","encicloped20");
+$db=mysqli_connect("localhost","root","milueselmejorperro","encicloped20");
 ?>
