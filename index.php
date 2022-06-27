@@ -13,7 +13,7 @@
 	<header>
 	  <section class="site-header">
 		  <div class="container-sm">
-			<div class="row justify-content-around">
+			<div class="row justify-content-between">
 				<div class="col-md-6 col-sm-12 my-auto">
 					<h1 style="color: #e41900">
 						Bienvenido a la primera enciclopedia de personajes de rol en español.
@@ -23,12 +23,12 @@
 						Crea tu perfil ahora y empieza a compartir tus creaciones!
 					</h4>
 					<?php 	if (isset($_SESSION['usuario'])){
-								echo '<a href = "/crear.php" class="btn boton-email my-2">Crear un Personaje</a>';
-							}else echo'<a href="./registro.php" class="btn boton-email my-2">Entrar a la Cripta</a>';
+								echo '<a href = "/crear" class="btn boton-email my-2">Crear un Personaje</a>';
+							}else echo'<a href="./registro" class="btn boton-email my-2">Entrar a la Cripta</a>';
 					?>
 				</div>
 				<div class="col-md-6 col-sm-12">
-				  <img src="./img/illust-1.png" alt="" class="img-fluid mx-5" />
+				  <img src="./img/illust-1.png" alt="" class="img-fluid" />
 				</div>
 			</div>
 		</section>

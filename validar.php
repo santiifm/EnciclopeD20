@@ -36,14 +36,14 @@ if (isset($_POST['login'])) {
 			$usuario_tipo = $res['tipo'];
 			$_SESSION['usuario'] = $usuario;
 			$_SESSION['usuario_tipo'] = $usuario_tipo;
-			header("location:index.php");
+			header("location:index");
 		}else{
 			unset ($_SESSION['usuario']);
-			include("login.php");
+			include("login");
 		}
 	}else{
 		unset ($_SESSION['usuario']);
-		include("login.php");
+		include("login");
 	}
 }
 
@@ -67,14 +67,14 @@ if (isset($_POST['registro'])) {
 			mysqli_query($db, $query);
 			
 			unset ($_SESSION['usuario']);
-			header('location: login.php');
+			header('location: login');
 		}else{
 			unset ($_SESSION['usuario']);
-			include("registro.php");
+			include("registro");
 		}
 	}else {
 		$_SESSION['Error'] = "Ese nombre de usuario ya está registrado. Intentá con otro.";
-		include("registro.php");
+		include("registro");
 	}
 }
 
@@ -102,26 +102,26 @@ if (isset($_POST['submit'])) {
 	
 	if (empty($nombre)) {
 		$_SESSION['Error'] = "Tenés que ingresar un nombre";
-		header('location: crear.php');
+		header('location: crear');
 	} elseif (empty($pdf)) {
 		$_SESSION['Error'] = "Tenés que ingresar un PDF";
-		header('location: crear.php');
+		header('location: crear');
 	} elseif (empty($img)) {
 		$_SESSION['Error'] = "Tenés que ingresar una imagen";
-		header('location: crear.php');
+		header('location: crear');
 	} elseif (!in_array($extension_pdf, ['pdf'])){
 		$_SESSION['Error'] = "El archivo ingresado no es un PDF.";
-		header('location: crear.php');
+		header('location: crear');
 	} elseif (!in_array($extension_img, $allowed_img)){
 		$_SESSION['Error'] = "La imagen ingresada no es de un tipo permitido.";
-		header('location: crear.php');
+		header('location: crear');
 	} else {
 		// mover los archivos temporales subidos a la carpeta deseada
 		if (move_uploaded_file($pdf, $destino_pdf) && move_uploaded_file($img, $destino_img)) {
 			$query = "INSERT INTO hojas (nombre_pj, pdf, img, autor, fecha) VALUES ('$nombre', '$nombre_pdf', '$nombre_img', '$autor', '$str_fecha')";
 			if (mysqli_query($db, $query)) {
 				$_SESSION['Error'] = "Tu personaje fue subido correctamente!";
-				header('location: crear.php');
+				header('location: crear');
 			}
 		}
 	}
@@ -153,7 +153,7 @@ if (isset($_POST['cambiar_perfil'])) {
 			mysqli_query($db, $query);
 			
 			unset ($_SESSION['usuario']);
-			header('location: login.php');
+			header('location: login');
 			
 		}	else if ($usuario == $_SESSION['usuario'] && isset($contraseña_1)) {
 			$contraseña = md5($contraseña_1);
@@ -162,7 +162,7 @@ if (isset($_POST['cambiar_perfil'])) {
 			mysqli_query($db, $query);
 			
 			unset ($_SESSION['usuario']);
-			header('location: login.php');
+			header('location: login');
 			
 			}	else if ($usuario != $_SESSION['usuario'] && !isset($contraseña_1)) {
 				
@@ -172,13 +172,13 @@ if (isset($_POST['cambiar_perfil'])) {
 				mysqli_query($db, $query);
 				
 				unset ($_SESSION['usuario']);
-				header('location: login.php');
+				header('location: login');
 				
 				}	else{
-					include("perfil.php");
+					include("perfil");
 					}
 		}else{
-			include("perfil.php");
+			include("perfil");
 		}
 }
 
@@ -194,7 +194,7 @@ if (isset($_POST['btn_eliminar'])) {
 		$_SESSION['aviso'] = "La operación fué realizada correctamente";
 	}
 	
-	header('location: creaciones.php');
+	header('location: creaciones');
 }	
 
 if (isset($_POST['cambiar_pj'])) {
@@ -221,10 +221,10 @@ if (isset($_POST['cambiar_pj'])) {
 	
 	if (!empty($pdf) && !in_array($extension_pdf, ['pdf'])){
 		$_SESSION['Error'] = "El archivo ingresado no es un PDF.";
-		header('location: modificar.php?id='.$id.'');
+		header('location: modificar?id='.$id.'');
 	} elseif (!empty($img) && !in_array($extension_img, $allowed_img)){
 		$_SESSION['Error'] = "La imagen ingresada no es de un tipo permitido.";
-		header('location: modificar.php?id='.$id.'');
+		header('location: modificar?id='.$id.'');
 	}
 	
 	if (!isset($_SESSION['Error'])){
@@ -246,11 +246,11 @@ if (isset($_POST['cambiar_pj'])) {
 			
 		}
 		
-		header('location: personaje.php?id='.$id.'');
+		header('location: personaje?id='.$id.'');
 		
 	}	else{
 		
-		header('location: modificar.php?id='.$id.'');
+		header('location: modificar?id='.$id.'');
 	
 	}
 }

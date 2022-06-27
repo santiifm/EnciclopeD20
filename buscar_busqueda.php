@@ -13,13 +13,13 @@ include('db.php');
 		$orden = $_GET['orden'];
 	}
 
-	if(!isset($_GET['entrada'])){
-        header('location: index.php');
+	if(!isset($_GET['entrada'])!=empty($_GET['entrada'])){
+        header('location: index');
     }
     
-    $filtervalues = $_GET['entrada'];
+    $entrada = $_GET['entrada'];
 
-    $sql = "SELECT `id` FROM `hojas` WHERE CONCAT(nombre_pj,autor,fecha) LIKE '%$filtervalues%' ORDER BY $orden";
+    $sql = "SELECT `id` FROM `hojas` WHERE CONCAT(nombre_pj,autor,fecha) LIKE '%$entrada%' ORDER BY $orden";
     $resultado = $db->query($sql);
     
     if ($resultado->num_rows > 0) {  
@@ -37,7 +37,7 @@ include('db.php');
 	$resultados_por_pagina = 8;
 	$resultados = ($pagina - 1) * ($resultados_por_pagina);
 	
-	$query = mysqli_query($db,"SELECT `id` FROM `hojas` WHERE CONCAT(nombre_pj,autor,fecha) LIKE '%$filtervalues%' ORDER BY id desc");
+	$query = mysqli_query($db,"SELECT `id` FROM `hojas` WHERE CONCAT(nombre_pj,autor,fecha) LIKE '%$entrada%' ORDER BY id desc");
 	$total_resultados = mysqli_num_rows($query);
 	$numero_paginas = ceil ($total_resultados / $resultados_por_pagina);
 ?>

@@ -21,7 +21,7 @@ error_reporting(E_ERROR | E_PARSE);
 					  <li class="list-group-item lista-pasos-item">Paso 2 - Introducí el nombre, una foto y el PDF terminado de tu personaje en el formulario.</li>
 					  <li class="list-group-item lista-pasos-item">Paso 3 - Apretá el botón de subir y compartí tu personaje con el resto del mundo!</li>
 					</ul>
-					<form id="formCrear" action="validar.php" method="post" onsubmit="return validarForm()" enctype="multipart/form-data">
+					<form id="formCrear" action="validar" method="post" onsubmit="return validarForm()" enctype="multipart/form-data">
 						<div class="mb-3">
 							<p style="color: #e41900">
 							<?php

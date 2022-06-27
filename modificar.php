@@ -22,7 +22,7 @@ error_reporting(E_ERROR | E_PARSE);
 					<img  class="shadow-lg rounded pt-2" src="<?= $img?>" alt="img_pj" style="width:50%; height:auto;">
 				</div>
 				<div class="col-md-6 col-sm-12">
-					<form action="validar.php" method="post" enctype="multipart/form-data">
+					<form action="validar" method="post" enctype="multipart/form-data">
 						<p style="color: #e41900">
 							<?php
 							if( isset($_SESSION['Error']) ){

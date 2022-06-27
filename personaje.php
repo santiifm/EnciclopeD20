@@ -19,8 +19,8 @@ error_reporting(E_ERROR | E_PARSE);
 					<?php
 					if ($_SESSION['usuario_tipo'] == "admin" or $autor == $_SESSION['usuario']) {
 					  ?>
-						  <a class="btn boton-email mt-2" href="./modificar.php?id=<?=$id?>" name="btn_modificar">Modificar</a>
-						  <form class="form-inline" action="validar.php" method="post">
+						  <a class="btn boton-email mt-2" href="./modificar?id=<?=$id?>" name="btn_modificar">Modificar</a>
+						  <form class="form-inline" action="validar" method="post">
 							<input type='hidden' name="id" value="<?php echo $id; ?>" />
 							<input type='hidden' name="img" value="<?php echo $pdf; ?>" />
 							<input type='hidden' name="pdf" value="<?php echo $img; ?>" />

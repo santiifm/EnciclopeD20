@@ -38,12 +38,12 @@
 	
 	<nav class="navbar navbar-expand-lg navbar-gradiente static-top shadow-sm pt-3 pb-3">
 		<div class="col-lg mx-auto">
-			<a href="index.php">
+			<a href="index">
 				<img src="./img/icon-header.png" alt="" width="368" height="88">
 			</a>
 		</div>
 		<div class="col-lg mx-auto">
-			<form action="busqueda.php" method="get">
+			<form action="busqueda" method="get">
 				<div class="row">
 					<div class="col-sm-10">
 						  <input class="form-control border-0 bg-dark" type="text" placeholder="Buscar" name="entrada" style="color: #FFFFFF">
@@ -53,14 +53,14 @@
 					</div>
 				</div>
 			</form>
-			<a class="btn bg-transparent" href="creaciones.php">Navegar Creaciones</a>
+			<a class="btn bg-transparent" href="creaciones">Navegar Creaciones</a>
 			<?php
 			if (isset($_SESSION['usuario'])){
-			echo '<a class="btn bg-transparent" href = "crear.php" style="color: #e41900">Creá tu Personaje</a>';}
+			echo '<a class="btn bg-transparent" href = "crear" style="color: #e41900">Creá tu Personaje</a>';}
 			?>
 			<?php
 			if (isset($_SESSION['usuario'])){
-			echo '<a class="btn bg-transparent" href = "mis_creaciones.php" style="color: #e41900">Mis Creaciones</a>';}
+			echo '<a class="btn bg-transparent" href = "mis_creaciones" style="color: #e41900">Mis Creaciones</a>';}
 			?>
 		</div>
 		<div class="col-lg mx-auto">
@@ -68,16 +68,16 @@
 				<?php if (isset($_SESSION['usuario'])){
 				echo $_SESSION['usuario'];
 				}
-				else echo '<a class="btn bg-transparent btn-sm" href="registro.php" style="color: #e41900">Registrate</a> o <a class="btn bg-transparent btn-sm" href="login.php" style="color: #e41900">Iniciá Sesión</a>';
+				else echo '<a class="btn bg-transparent btn-sm" href="registro" style="color: #e41900">Registrate</a> o <a class="btn bg-transparent btn-sm" href="login" style="color: #e41900">Iniciá Sesión</a>';
 				?>
 			</p>
 			<p class="mb-3">
 				<?php
 					if (isset($_SESSION['usuario'])){
-					echo '<a class="btn bg-transparent" href = "perfil.php" style="color: #e41900">Mi Perfil</a>';}
+					echo '<a class="btn bg-transparent" href = "perfil" style="color: #e41900">Mi Perfil</a>';}
 					echo '&nbsp;';
 					if (isset($_SESSION['usuario'])){
-					echo '<a class="btn bg-transparent" href = "logout.php" style="color: #e41900">Cerrar Sesión</a>';}
+					echo '<a class="btn bg-transparent" href = "logout" style="color: #e41900">Cerrar Sesión</a>';}
 				?>
 			</p>
 		</div>
