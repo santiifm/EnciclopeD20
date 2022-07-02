@@ -11,7 +11,9 @@
 body {
   font-family: "Morris Roman";
   color: #FFFFFF;
-  background: url('./img/bg-dark.png') no-repeat center fixed;
+  background: url('./img/bg-dark.png');
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
 }
 
@@ -45,7 +47,7 @@ p{
   text-shadow: 2px 2px #000000;
 }
 form.form-inline {
-  display: inline-block
+  display: inline-block;
 }
 a:link{
   text-decoration: none;
@@ -82,14 +84,15 @@ button,
 .site-header {
   padding-top: 150px;
   padding-bottom: 150px;
-  background: url('./img/bg-highlight.png') no-repeat;
-  background-position: center calc(100% - 10px);
+  background: url('./img/bg-highlight.png');
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
 }
 .section_pj {
-  padding-bottom: 50px;
-  background: url('./img/bg-highlight.png') no-repeat;
-  background-position: center calc(100% - 10px);
+  background: url('./img/bg-highlight.png');
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
 }
 .form-control{
@@ -107,12 +110,16 @@ button,
 .section-feature {
   padding-top: 50px;
   padding-bottom: 250px;
-  background: url('./img/bg-highlight.png') no-repeat;
-  background-position: center calc(100% - 100px);
+  background: url('./img/bg-highlight.png');
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
 }
 .container-crear{
-  background: url('./img/bg-highlight.png') no-repeat center fixed;
+  background: url('./img/bg-highlight.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   max-width: 1600px;
 }
 .pairs-crypto{
@@ -136,7 +143,7 @@ button,
     vertical-align: top;
     -webkit-user-select: none!important;
     -moz-user-select: none!important;
-    -ms-user-select: none!important;
+    ms-user-select: none!important;
     user-select: none!important;
 }
 .boton-redes{
@@ -167,7 +174,9 @@ button,
 .site-footer{
   padding-top: 50px;
   padding-bottom: 100px;
-  background: url(./img/bg-footer.png) no-repeat center;
+  background: url('./img/bg-footer.png');
+  background-repeat: no-repeat;
+  background-position: center calc(100% + 220px);
   background-size: cover;
   text-align: center;
 }
@@ -177,8 +186,9 @@ button,
 .site-login{
   padding-top: 450px;
   padding-bottom: 450px;
-  background: url('./img/bg-highlight.png') no-repeat;
-  background-position: center calc(100% - 10px);
+  background: url('./img/bg-highlight.png');
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
 }
 .lista-pasos-item{
@@ -195,6 +205,12 @@ button,
   -webkit-transition-property: all;
   -webkit-transition-duration: 0.3s;
   -webkit-transition-timing-function: ease;
+}
+.section_pj {
+  background: url('./img/bg-highlight.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 @media (hover: hover) and (pointer: fine){
   .card_pj:hover {

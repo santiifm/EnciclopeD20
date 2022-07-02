@@ -14,7 +14,7 @@
 	
 	?>
 	
-	<section>
+	<section class="section_pj">
 		<div class="container-sm" style="padding-top: 50px">
 			<div class="dropdown">
 			  <a class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Ordenar</a>
